@@ -170,1109 +170,1600 @@ print("Complete! Running...")
 
 
 --//Paste script below this line.
+local partsWithId = {}
+local awaitRef = {}
 
-local plr=game.Players.LocalPlayer
-local char=plr.Character
-local mouse=plr:GetMouse()
-repeat wait()until char
-local music=2154216395
-local speed=1
-local mPlace=game:GetService("MarketplaceService")
-local purpleCol=BrickColor.new("Bright violet")
-local tors=char:waitForChild"Torso"
-local root=char:waitForChild"HumanoidRootPart"
-local rootpart=root
-local head=char:waitForChild"Head"
-local larm=char:waitForChild"Left Arm"
-local rarm=char:waitForChild"Right Arm"
-local lleg=char:waitForChild"Left Leg"
-local rleg=char:waitForChild"Right Leg"
-local neck=tors:waitForChild"Neck"
-local rs=tors:waitForChild"Right Shoulder"
-local ls=tors:waitForChild"Left Shoulder"
-local rh=tors:waitForChild"Right Hip"
-local lh=tors:waitForChild"Left Hip"
-local rj=root:waitForChild"RootJoint"
-local hum=char:waitForChild"Humanoid"
-local animate=char.Animate
-local animator=hum.Animator
-local effects=Instance.new("Folder")
-local pants=Instance.new("Pants")
-local shirt=Instance.new("Shirt")
+local root = {
+	ID = 0;
+	Type = "Script";
+	Properties = {
+		Name = "The man behind the slaughter";
+	};
+	Children = {
+		{
+			ID = 1;
+			Type = "Model";
+			Properties = {
+				Name = "RightLegHolster";
+			};
+			Children = {
+				{
+					ID = 2;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Symmetric;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						CanCollide = false;
+						Color = Color3.new(1/15,1/15,1/15);
+						CFrame = CFrame.new(124.19650268555,-14.620683670044,-364.37536621094,0.8705717921257,0.002651403658092,-0.49203434586525,-0.0039189988747239,0.99999117851257,-0.0015453998930752,0.49202594161034,0.0032736631110311,0.87057441473007);
+						BrickColor = BrickColor.new(1/15,1/15,1/15);
+						Rotation = Vector3.new(0.10000000149012,-29.469999313354,-0.17000000178814);
+						Name = "Band";
+						brickColor = BrickColor.new(1/15,1/15,1/15);
+						Position = Vector3.new(124.19650268555,-14.620683670044,-364.37536621094);
+						Orientation = Vector3.new(0.090000003576279,-29.469999313354,-0.21999999880791);
+						Material = Enum.Material.SmoothPlastic;
+						Anchored = true;
+						Size = Vector3.new(1.0400000810623,0.1799999922514,1.0300000905991);
+					};
+					Children = {};
+				};
+				{
+					ID = 3;
+					Type = "Part";
+					Properties = {
+						BottomSurface = Enum.SurfaceType.Smooth;
+						CanCollide = false;
+						Color = Color3.new(1/15,1/15,1/15);
+						CFrame = CFrame.new(124.67156982422,-14.644238471985,-364.07824707031,-0.8705717921257,0.34343481063843,0.35235980153084,0.0039189988747239,0.72093498706818,-0.69299167394638,-0.49202594161034,-0.60191810131073,-0.62897157669067);
+						BrickColor = BrickColor.new(1/15,1/15,1/15);
+						Rotation = Vector3.new(132.22999572754,20.629999160767,-158.4700012207);
+						Size = Vector3.new(0.32000133395195,0.35999998450279,0.36000028252602);
+						brickColor = BrickColor.new(1/15,1/15,1/15);
+						Position = Vector3.new(124.67156982422,-14.644238471985,-364.07824707031);
+						Orientation = Vector3.new(43.869998931885,150.74000549316,0.31000000238419);
+						Material = Enum.Material.SmoothPlastic;
+						Anchored = true;
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 4;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						CanCollide = false;
+						Color = Color3.new(107/255,10/51,124/255);
+						CFrame = CFrame.new(124.68734741211,-14.693945884705,-364.01647949219,-0.8705717921257,-0.34871700406075,-0.34713292121887,0.0039189988747239,-0.71038717031479,0.70380014181137,-0.49202594161034,0.61134821176529,0.61980962753296);
+						Rotation = Vector3.new(-48.630001068115,-20.309999465942,158.16999816895);
+						BrickColor = BrickColor.new(107/255,10/51,124/255);
+						brickColor = BrickColor.new(107/255,10/51,124/255);
+						Position = Vector3.new(124.68734741211,-14.693945884705,-364.01647949219);
+						Orientation = Vector3.new(-44.729999542236,-29.25,179.67999267578);
+						Name = "Knife";
+						Anchored = true;
+						Size = Vector3.new(0.050000000745058,2.0699994564056,0.70999991893768);
+					};
+					Children = {
+						{
+							ID = 5;
+							Type = "SpecialMesh";
+							Properties = {
+								Scale = Vector3.new(0.60000002384186,0.60000002384186,0.60000002384186);
+								MeshId = "http://www.roblox.com/asset/?id=121944778  ";
+								MeshType = Enum.MeshType.FileMesh;
+								TextureId = "http://www.roblox.com/asset/?id=130252453";
+							};
+							Children = {};
+						};
+					};
+				};
+				{
+					ID = 6;
+					Type = "Script";
+					Properties = {
+						Name = "Weld";
+					};
+					Children = {};
+				};
+				{
+					ID = 7;
+					Type = "Part";
+					Properties = {
+						BottomSurface = Enum.SurfaceType.Smooth;
+						CanCollide = false;
+						Color = Color3.new(107/255,10/51,124/255);
+						CFrame = CFrame.new(124.1944732666,-14.876529693604,-364.37811279297,0.86602389812469,-6.4952159846143e-06,-0.50000286102295,-2.5004817660879e-11,1,-1.2990405593882e-05,0.50000292062759,1.1249907402089e-05,0.86602377891541);
+						BrickColor = BrickColor.new(107/255,10/51,124/255);
+						Size = Vector3.new(1,2,1);
+						Rotation = Vector3.new(0,-30,0);
+						Transparency = 1;
+						brickColor = BrickColor.new(107/255,10/51,124/255);
+						Position = Vector3.new(124.1944732666,-14.876529693604,-364.37811279297);
+						Orientation = Vector3.new(0,-30,0);
+						Anchored = true;
+						Name = "Middle";
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+			};
+		};
+		{
+			ID = 8;
+			Type = "Model";
+			Properties = {
+				Name = "Face";
+			};
+			Children = {
+				{
+					ID = 9;
+					Type = "UnionOperation";
+					Properties = {
+						CanCollide = false;
+						Color = Color3.new(248/255,248/255,248/255);
+						Velocity = Vector3.new(0.00043283202103339,-6.1289036239032e-05,0.00035391631536186);
+						Rotation = Vector3.new(90.190002441406,-0.15000000596046,-149.53999328613);
+						CFrame = CFrame.new(124.19982910156,-11.119764328003,-365.00555419922,-0.86201518774033,0.50687551498413,-0.0026619546115398,0.0039430013857782,0.0014539991971105,-0.99999129772186,-0.50686717033386,-0.86201816797256,-0.0032519798260182);
+						RotVelocity = Vector3.new(-8.3128965343349e-05,-0.00091817288193852,-9.6704925454105e-06);
+						Position = Vector3.new(124.19982910156,-11.119764328003,-365.00555419922);
+						Orientation = Vector3.new(89.76000213623,-140.69999694824,69.76000213623);
+						Material = Enum.Material.Neon;
+						Anchored = true;
+						Size = Vector3.new(0.24002075195313,0.24000549316406,0.19816637039185);
+					};
+					Children = {};
+				};
+				{
+					ID = 10;
+					Type = "UnionOperation";
+					Properties = {
+						CanCollide = false;
+						Color = Color3.new(248/255,248/255,248/255);
+						Velocity = Vector3.new(0.00046919696615078,-6.1707178247161e-05,8.1019010394812e-05);
+						Rotation = Vector3.new(90.190002441406,-0.15000000596046,-149.53999328613);
+						CFrame = CFrame.new(123.94146728516,-11.118209838867,-365.15734863281,-0.86201518774033,0.50687551498413,-0.0026619546115398,0.0039430013857782,0.0014539991971105,-0.99999129772186,-0.50686717033386,-0.86201816797256,-0.0032519798260182);
+						RotVelocity = Vector3.new(-8.3128965343349e-05,-0.00091817288193852,-9.6704925454105e-06);
+						Position = Vector3.new(123.94146728516,-11.118209838867,-365.15734863281);
+						Orientation = Vector3.new(89.76000213623,-140.69999694824,69.76000213623);
+						Material = Enum.Material.Neon;
+						Anchored = true;
+						Size = Vector3.new(0.24020004272461,0.24007594585419,0.19824647903442);
+					};
+					Children = {};
+				};
+				{
+					ID = 11;
+					Type = "UnionOperation";
+					Properties = {
+						CanCollide = false;
+						Color = Color3.new(107/255,10/51,124/255);
+						Anchored = true;
+						Rotation = Vector3.new(16.370000839233,-29.489999771118,8);
+						CFrame = CFrame.new(124.09290313721,-11.595634460449,-365.10888671875,0.86201518774033,-0.1210890635848,-0.49220657348633,-0.0039430013857782,0.96941548585892,-0.24539396166801,0.50686717033386,0.21347412467003,0.83517342805862);
+						brickColor = BrickColor.new(107/255,10/51,124/255);
+						Position = Vector3.new(124.09290313721,-11.595634460449,-365.10888671875);
+						Orientation = Vector3.new(14.210000038147,-30.510000228882,-0.23000000417233);
+						Material = Enum.Material.SmoothPlastic;
+						BrickColor = BrickColor.new(107/255,10/51,124/255);
+						Size = Vector3.new(0.66206121444702,0.34468823671341,0.86209392547607);
+					};
+					Children = {};
+				};
+				{
+					ID = 12;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Symmetric;
+						BrickColor = BrickColor.new(107/255,10/51,124/255);
+						Anchored = true;
+						CanCollide = false;
+						Color = Color3.new(107/255,10/51,124/255);
+						Velocity = Vector3.new(-2.3944485292304e-05,-1.7998550902121e-05,0.00017018290236592);
+						Size = Vector3.new(2,1,1);
+						RotVelocity = Vector3.new(-8.3128965343349e-05,-0.00091817288193852,-9.6704925454105e-06);
+						Rotation = Vector3.new(0.10000000149012,-30.459999084473,-0.18000000715256);
+						Transparency = 1;
+						brickColor = BrickColor.new(107/255,10/51,124/255);
+						Position = Vector3.new(123.80657958984,-11.318699836731,-364.6337890625);
+						Orientation = Vector3.new(0.079999998211861,-30.459999084473,-0.23000000417233);
+						CFrame = CFrame.new(123.80657958984,-11.318699836731,-364.6337890625,0.86201518774033,0.0026617001276463,-0.50687557458878,-0.0039430013857782,0.99999129772186,-0.001454500365071,0.50686717033386,0.0032524121925235,0.86201816797256);
+						Name = "Middle";
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 13;
+					Type = "Part";
+					Properties = {
+						BottomSurface = Enum.SurfaceType.Smooth;
+						CanCollide = false;
+						Color = Color3.new(107/255,10/51,124/255);
+						CFrame = CFrame.new(123.87042236328,-10.697212219238,-364.72003173828,0.86602598428726,-6.495181878563e-06,-0.49999901652336,-2.5460352576223e-11,1,-1.2990439245186e-05,0.49999901652336,1.1249964700255e-05,0.86602598428726);
+						BrickColor = BrickColor.new(107/255,10/51,124/255);
+						Size = Vector3.new(1.5,1.5,1.5);
+						Rotation = Vector3.new(0,-30,0);
+						Anchored = true;
+						brickColor = BrickColor.new(107/255,10/51,124/255);
+						Position = Vector3.new(123.87042236328,-10.697212219238,-364.72003173828);
+						Orientation = Vector3.new(0,-30,0);
+						Name = "Handle";
+						Locked = true;
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {
+						{
+							ID = 14;
+							Type = "SpecialMesh";
+							Properties = {
+								Name = "SpecialMesh";
+								MeshId = "rbxassetid://5063628094";
+								MeshType = Enum.MeshType.FileMesh;
+								TextureId = "http://www.roblox.com/asset/?id=5063626933";
+							};
+							Children = {};
+						};
+					};
+				};
+				{
+					ID = 15;
+					Type = "Script";
+					Properties = {
+						Name = "Weld";
+					};
+					Children = {};
+				};
+			};
+		};
+		{
+			ID = 16;
+			Type = "ModuleScript";
+			Properties = {
+				Name = "R15Ragdoll";
+			};
+			Children = {};
+		};
+		{
+			ID = 17;
+			Type = "ModuleScript";
+			Properties = {
+				Name = "R6Ragdoll";
+			};
+			Children = {};
+		};
+		{
+			ID = 18;
+			Type = "Model";
+			Properties = {
+				Name = "Headz";
+			};
+			Children = {
+				{
+					ID = 19;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(1/15,1/15,1/15);
+						CFrame = CFrame.new(-0.795834004879,6.9847869873047,-62.913505554199,-0.93990033864975,-0.17601093649864,-0.29258766770363,-0.19834607839584,0.97894310951233,0.048261906951666,0.27793207764626,0.10339499264956,-0.95502001047134);
+						BrickColor = BrickColor.new(1/15,1/15,1/15);
+						Size = Vector3.new(0.41999989748001,1.289999961853,0.20000000298023);
+						Rotation = Vector3.new(-177.11000061035,-17.010000228882,169.38999938965);
+						Anchored = true;
+						Name = "Left Ear";
+						Position = Vector3.new(-0.795834004879,6.9847869873047,-62.913505554199);
+						Orientation = Vector3.new(-2.7699999809265,-162.9700012207,-11.449999809265);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(1/15,1/15,1/15);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 20;
+					Type = "UnionOperation";
+					Properties = {
+						Color = Color3.new(248/255,217/255,109/255);
+						UsePartColor = true;
+						CFrame = CFrame.new(-0.00047699999413453,4.2256140708923,-63.464424133301,-0.094503037631512,0.0092110438272357,0.99548202753067,-0.051967017352581,0.9985483288765,-0.014172745868564,-0.99416732788086,-0.053071603178978,-0.09388717263937);
+						BrickColor = BrickColor.new(248/255,217/255,109/255);
+						Rotation = Vector3.new(171.41999816895,84.550003051758,-174.42999267578);
+						brickColor = BrickColor.new(248/255,217/255,109/255);
+						Name = "Jaw1";
+						Position = Vector3.new(-0.00047699999413453,4.2256140708923,-63.464424133301);
+						Orientation = Vector3.new(0.81000000238419,95.389999389648,-2.9800000190735);
+						Material = Enum.Material.SmoothPlastic;
+						Anchored = true;
+						Size = Vector3.new(2.1459369659424,0.51784205436707,2.0522079467773);
+					};
+					Children = {};
+				};
+				{
+					ID = 21;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(223/255,223/255,74/85);
+						CFrame = CFrame.new(1.6576420068741,7.7662000656128,-63.496101379395,-0.6263262629509,0.70706737041473,0.3282852768898,0.58036017417908,0.70408058166504,-0.40920981764793,-0.52047818899155,-0.065775156021118,-0.85133785009384);
+						BrickColor = BrickColor.new(223/255,223/255,74/85);
+						Size = Vector3.new(0.53999996185303,1.039999961853,0.20000000298023);
+						Rotation = Vector3.new(154.33000183105,19.159999847412,-131.5299987793);
+						Anchored = true;
+						Name = "upperGone";
+						Position = Vector3.new(1.6576420068741,7.7662000656128,-63.496101379395);
+						Orientation = Vector3.new(24.159999847412,158.91000366211,39.5);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(223/255,223/255,74/85);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 22;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,217/255,109/255);
+						CFrame = CFrame.new(1.6165119409561,7.780149936676,-63.42244720459,-0.6263262629509,0.70706737041473,0.3282852768898,0.58036017417908,0.70408058166504,-0.40920981764793,-0.52047818899155,-0.065775156021118,-0.85133785009384);
+						BrickColor = BrickColor.new(248/255,217/255,109/255);
+						Size = Vector3.new(0.76999992132187,1.289999961853,0.30000001192093);
+						Rotation = Vector3.new(154.33000183105,19.159999847412,-131.5299987793);
+						Anchored = true;
+						Name = "upprGone";
+						Position = Vector3.new(1.6165119409561,7.780149936676,-63.42244720459);
+						Orientation = Vector3.new(24.159999847412,158.91000366211,39.5);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(248/255,217/255,109/255);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 23;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(223/255,223/255,74/85);
+						CFrame = CFrame.new(-1.1200679540634,7.7550530433655,-63.384162902832,-0.93844002485275,-0.33750912547112,-0.07360728085041,-0.12484099715948,0.53003805875778,-0.83873379230499,0.32209500670433,-0.77791213989258,-0.53954386711121);
+						BrickColor = BrickColor.new(223/255,223/255,74/85);
+						Size = Vector3.new(0.53999996185303,1.039999961853,0.20000000298023);
+						Rotation = Vector3.new(122.75,-4.2199997901917,160.2200012207);
+						Anchored = true;
+						Name = "Upper Left Ear";
+						Position = Vector3.new(-1.1200679540634,7.7550530433655,-63.384162902832);
+						Orientation = Vector3.new(57.009998321533,-172.22999572754,-13.25);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(223/255,223/255,74/85);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 24;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,248/255,248/255);
+						CFrame = CFrame.new(0.74089401960373,4.4860949516296,-64.180610656738,-0.63948422670364,0.010856799781322,0.76872760057449,0.043683014810085,0.99879801273346,0.02223264425993,-0.76756227016449,0.04779776185751,-0.6391898393631);
+						BrickColor = BrickColor.new(248/255,248/255,248/255);
+						Size = Vector3.new(0.3299999833107,0.23999997973442,0.20000000298023);
+						Rotation = Vector3.new(-178.00999450684,50.240001678467,-179.0299987793);
+						Anchored = true;
+						Name = "Teeth";
+						Position = Vector3.new(0.74089401960373,4.4860949516296,-64.180610656738);
+						Orientation = Vector3.new(-1.2699999809265,129.74000549316,2.5);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(248/255,248/255,248/255);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 25;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,217/255,109/255);
+						CFrame = CFrame.new(-1.1017190217972,7.8115339279175,-63.322624206543,-0.93844002485275,-0.33750912547112,-0.07360728085041,-0.12484099715948,0.53003805875778,-0.83873379230499,0.32209500670433,-0.77791213989258,-0.53954386711121);
+						BrickColor = BrickColor.new(248/255,217/255,109/255);
+						Size = Vector3.new(0.76999992132187,1.289999961853,0.30000001192093);
+						Rotation = Vector3.new(122.75,-4.2199997901917,160.2200012207);
+						Anchored = true;
+						Name = "Upper Left Ear";
+						Position = Vector3.new(-1.1017190217972,7.8115339279175,-63.322624206543);
+						Orientation = Vector3.new(57.009998321533,-172.22999572754,-13.25);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(248/255,217/255,109/255);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 26;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,248/255,248/255);
+						CFrame = CFrame.new(-0.79845798015594,4.4897398948669,-64.116081237793,-0.60483676195145,0.01085789501667,-0.7962754368782,-0.03151198849082,0.99879765510559,0.037555407732725,0.79572570323944,0.047807116061449,-0.60376739501953);
+						BrickColor = BrickColor.new(248/255,248/255,248/255);
+						Size = Vector3.new(0.3299999833107,0.23999997973442,0.20000000298023);
+						Rotation = Vector3.new(-176.44000244141,-52.779998779297,-178.9700012207);
+						Anchored = true;
+						Name = "Teeth";
+						Position = Vector3.new(-0.79845798015594,4.4897398948669,-64.116081237793);
+						Orientation = Vector3.new(-2.1500000953674,-127.16999816895,-1.8099999427795);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(248/255,248/255,248/255);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 27;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,248/255,248/255);
+						CFrame = CFrame.new(0.44842898845673,4.4857048988342,-64.316078186035,-0.98852854967117,0.010863464325666,0.15064278244972,0.017929989844561,0.99879747629166,0.045630514621735,-0.14996592700481,0.047808092087507,-0.9875345826149);
+						BrickColor = BrickColor.new(248/255,248/255,248/255);
+						Size = Vector3.new(0.3299999833107,0.23999997973442,0.20000000298023);
+						Rotation = Vector3.new(-177.35000610352,8.6599998474121,-179.36999511719);
+						Anchored = true;
+						Name = "Teeth";
+						Position = Vector3.new(0.44842898845673,4.4857048988342,-64.316078186035);
+						Orientation = Vector3.new(-2.6199998855591,171.33000183105,1.0299999713898);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(248/255,248/255,248/255);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 28;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,248/255,248/255);
+						CFrame = CFrame.new(-0.21165800094604,4.4833168983459,-64.325965881348,-0.99972385168076,0.010858395136893,0.020839616656303,0.011839997954667,0.99879765510559,0.047572381794453,-0.020297998562455,0.047805987298489,-0.998650431633);
+						BrickColor = BrickColor.new(248/255,248/255,248/255);
+						Size = Vector3.new(0.3299999833107,0.23999997973442,0.20000000298023);
+						Rotation = Vector3.new(-177.27000427246,1.1900000572205,-179.38000488281);
+						Anchored = true;
+						Name = "Teeth";
+						Position = Vector3.new(-0.21165800094604,4.4833168983459,-64.325965881348);
+						Orientation = Vector3.new(-2.7300000190735,178.80000305176,0.68000000715256);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(248/255,248/255,248/255);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 29;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,248/255,248/255);
+						CFrame = CFrame.new(-0.54134702682495,4.495756149292,-64.300178527832,-0.99163198471069,0.010863307863474,-0.12863945960999,0.0046100001782179,0.99879747629166,0.048809450119734,0.12901499867439,0.047807980328798,-0.99048960208893);
+						BrickColor = BrickColor.new(248/255,248/255,248/255);
+						Size = Vector3.new(0.3299999833107,0.23999997973442,0.20000000298023);
+						Rotation = Vector3.new(-177.17999267578,-7.3899998664856,-179.36999511719);
+						Anchored = true;
+						Name = "Teeth";
+						Position = Vector3.new(-0.54134702682495,4.495756149292,-64.300178527832);
+						Orientation = Vector3.new(-2.7999999523163,-172.60000610352,0.25999999046326);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(248/255,248/255,248/255);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 30;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,248/255,248/255);
+						CFrame = CFrame.new(0.1180379986763,4.4799990653992,-64.331184387207,-0.99972385168076,0.010858395136893,0.020839616656303,0.011839997954667,0.99879765510559,0.047572381794453,-0.020297998562455,0.047805987298489,-0.998650431633);
+						BrickColor = BrickColor.new(248/255,248/255,248/255);
+						Size = Vector3.new(0.3299999833107,0.23999997973442,0.20000000298023);
+						Rotation = Vector3.new(-177.27000427246,1.1900000572205,-179.38000488281);
+						Anchored = true;
+						Name = "Teeth";
+						Position = Vector3.new(0.1180379986763,4.4799990653992,-64.331184387207);
+						Orientation = Vector3.new(-2.7300000190735,178.80000305176,0.68000000715256);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(248/255,248/255,248/255);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 31;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,248/255,248/255);
+						CFrame = CFrame.new(-0.88354098796844,4.5481481552124,-63.480827331543,0.027700996026397,0.0072129992768168,-0.99959033727646,-0.024339996278286,0.99968236684799,0.006539145950228,0.99931985139847,0.024148883298039,0.027867764234543);
+						BrickColor = BrickColor.new(248/255,248/255,248/255);
+						Size = Vector3.new(0.3299999833107,0.23999997973442,0.20000000298023);
+						Rotation = Vector3.new(-13.210000038147,-88.360000610352,-14.60000038147);
+						Anchored = true;
+						Name = "Teeth";
+						Position = Vector3.new(-0.88354098796844,4.5481481552124,-63.480827331543);
+						Orientation = Vector3.new(-0.37000000476837,-88.400001525879,-1.3899999856949);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(248/255,248/255,248/255);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 32;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,248/255,248/255);
+						CFrame = CFrame.new(-0.87524002790451,4.5061860084534,-63.814033508301,-0.10249599814415,0.0072129378095269,-0.99470728635788,-0.023280000314116,0.99968248605728,0.0096478164196014,0.99446099996567,0.02414564974606,-0.10229552537203);
+						BrickColor = BrickColor.new(248/255,248/255,248/255);
+						Size = Vector3.new(0.3299999833107,0.20000000298023,0.20000000298023);
+						Rotation = Vector3.new(-174.61000061035,-84.099998474121,-175.9700012207);
+						Anchored = true;
+						Name = "Teeth";
+						Position = Vector3.new(-0.87524002790451,4.5061860084534,-63.814033508301);
+						Orientation = Vector3.new(-0.55000001192093,-95.870002746582,-1.3300000429153);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(248/255,248/255,248/255);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 33;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,248/255,248/255);
+						CFrame = CFrame.new(0.89219301939011,4.529944896698,-63.509559631348,0.003722999477759,-0.010074997320771,0.9999423623085,-0.071551993489265,-0.99738895893097,-0.0097828665748239,0.99742990732193,-0.071511447429657,-0.0044341646134853);
+						BrickColor = BrickColor.new(248/255,248/255,248/255);
+						Size = Vector3.new(0.3299999833107,0.23999997973442,0.20000000298023);
+						Rotation = Vector3.new(114.37999725342,89.379997253418,69.720001220703);
+						Anchored = true;
+						Name = "Teeth";
+						Position = Vector3.new(0.89219301939011,4.529944896698,-63.509559631348);
+						Orientation = Vector3.new(0.56000000238419,90.25,-175.89999389648);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(248/255,248/255,248/255);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 34;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,248/255,248/255);
+						CFrame = CFrame.new(0.87253201007843,4.5239391326904,-63.841209411621,0.13369406759739,-0.010073031298816,0.99097144603729,-0.072222046554089,-0.99738854169846,-0.00039462873246521,0.98838758468628,-0.0715172290802,-0.13407242298126);
+						BrickColor = BrickColor.new(248/255,248/255,248/255);
+						Size = Vector3.new(0.3299999833107,0.23999997973442,0.20000000298023);
+						Rotation = Vector3.new(179.83000183105,82.290000915527,4.3099999427795);
+						Anchored = true;
+						Name = "Teeth";
+						Position = Vector3.new(0.87253201007843,4.5239391326904,-63.841209411621);
+						Orientation = Vector3.new(0.019999999552965,97.699996948242,-175.86000061035);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(248/255,248/255,248/255);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 35;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,217/255,109/255);
+						CFrame = CFrame.new(0.0065500000491738,4.6836519241333,-63.560325622559,-0.01513200532645,0.01085099298507,0.99982666969299,0.04796702042222,0.99879777431488,-0.010113863274455,-0.99873435497284,0.047805663198233,-0.015634302049875);
+						BrickColor = BrickColor.new(248/255,217/255,109/255);
+						Size = Vector3.new(1.8099998235703,0.39999997615814,1.3200000524521);
+						Rotation = Vector3.new(147.10000610352,88.930000305176,-144.36000061035);
+						Anchored = true;
+						Name = "Snout";
+						Position = Vector3.new(0.0065500000491738,4.6836519241333,-63.560325622559);
+						Orientation = Vector3.new(0.5799999833107,90.900001525879,2.75);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(248/255,217/255,109/255);
+						TopSurface = Enum.SurfaceType.SmoothNoOutlines;
+					};
+					Children = {};
+				};
+				{
+					ID = 36;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,217/255,109/255);
+						CFrame = CFrame.new(0.60747897624969,4.7048101425171,-64.13793182373,-0.7038808465004,0.010847141034901,0.71023523807526,0.041582990437746,0.99879789352417,0.025956705212593,-0.70909982919693,0.04780413582921,-0.70348572731018);
+						BrickColor = BrickColor.new(248/255,217/255,109/255);
+						Size = Vector3.new(0.48999989032745,0.39999997615814,0.54000008106232);
+						Rotation = Vector3.new(-177.88999938965,45.25,-179.11999511719);
+						Anchored = true;
+						Name = "Side Snout";
+						Position = Vector3.new(0.60747897624969,4.7048101425171,-64.13793182373);
+						Orientation = Vector3.new(-1.4900000095367,134.72999572754,2.3800001144409);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(248/255,217/255,109/255);
+						TopSurface = Enum.SurfaceType.SmoothNoOutlines;
+					};
+					Children = {};
+				};
+				{
+					ID = 37;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,217/255,109/255);
+						CFrame = CFrame.new(-0.62527102231979,4.7169370651245,-64.11058807373,0.56923604011536,0.010855011641979,0.82210254669189,0.033137004822493,0.99879747629166,-0.036132641136646,-0.82150614261627,0.047810014337301,0.56819182634354);
+						BrickColor = BrickColor.new(248/255,217/255,109/255);
+						Size = Vector3.new(0.4799998998642,0.39999997615814,0.5200001001358);
+						Rotation = Vector3.new(3.6400001049042,55.299999237061,-1.0900000333786);
+						Anchored = true;
+						Name = "Side Snout";
+						Position = Vector3.new(-0.62527102231979,4.7169370651245,-64.11058807373);
+						Orientation = Vector3.new(2.0699999332428,55.349998474121,1.8999999761581);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(248/255,217/255,109/255);
+						TopSurface = Enum.SurfaceType.SmoothNoOutlines;
+					};
+					Children = {};
+				};
+				{
+					ID = 38;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,217/255,109/255);
+						CFrame = CFrame.new(1.0063129663467,6.6318111419678,-63.112968444824,-0.79176038503647,0.30442714691162,0.529565513134,0.18625009059906,0.94599181413651,-0.26534980535507,-0.58174431324005,-0.11146184802055,-0.80569839477539);
+						BrickColor = BrickColor.new(248/255,217/255,109/255);
+						Size = Vector3.new(0.76999992132187,1.289999961853,0.30000001192093);
+						Rotation = Vector3.new(161.77000427246,31.979999542236,-158.9700012207);
+						Anchored = true;
+						Name = "Right Ear";
+						Position = Vector3.new(1.0063129663467,6.6318111419678,-63.112968444824);
+						Orientation = Vector3.new(15.390000343323,146.67999267578,11.140000343323);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(248/255,217/255,109/255);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 39;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(1/15,1/15,1/15);
+						CFrame = CFrame.new(1.2331119775772,7.2398099899292,-63.249290466309,-0.74268102645874,0.49943086504936,0.44608724117279,0.10644599795341,0.74573194980621,-0.65768778324127,-0.66113102436066,-0.44096803665161,-0.60700333118439);
+						BrickColor = BrickColor.new(1/15,1/15,1/15);
+						Size = Vector3.new(0.33999991416931,0.34999996423721,0.20000000298023);
+						Rotation = Vector3.new(132.71000671387,26.489999771118,-146.08000183105);
+						Anchored = true;
+						Name = "Right Ear";
+						Position = Vector3.new(1.2331119775772,7.2398099899292,-63.249290466309);
+						Orientation = Vector3.new(41.119998931885,143.69000244141,8.1199998855591);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(1/15,1/15,1/15);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 40;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(1/15,1/15,1/15);
+						CFrame = CFrame.new(0.77958297729492,5.9541258811951,-63.063896179199,-0.79176038503647,0.30442714691162,0.529565513134,0.18625009059906,0.94599181413651,-0.26534980535507,-0.58174431324005,-0.11146184802055,-0.80569839477539);
+						BrickColor = BrickColor.new(1/15,1/15,1/15);
+						Size = Vector3.new(0.41999989748001,0.31999999284744,0.20000000298023);
+						Rotation = Vector3.new(161.77000427246,31.979999542236,-158.9700012207);
+						Anchored = true;
+						Name = "Right Ear";
+						Position = Vector3.new(0.77958297729492,5.9541258811951,-63.063896179199);
+						Orientation = Vector3.new(15.390000343323,146.67999267578,11.140000343323);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(1/15,1/15,1/15);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 41;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(223/255,223/255,74/85);
+						CFrame = CFrame.new(1.0276529788971,6.6212038993835,-63.145195007324,-0.79176038503647,0.30442714691162,0.529565513134,0.18625009059906,0.94599181413651,-0.26534980535507,-0.58174431324005,-0.11146184802055,-0.80569839477539);
+						BrickColor = BrickColor.new(223/255,223/255,74/85);
+						Size = Vector3.new(0.60999995470047,1.1699999570847,0.30000001192093);
+						Rotation = Vector3.new(161.77000427246,31.979999542236,-158.9700012207);
+						Anchored = true;
+						Name = "Right Ear";
+						Position = Vector3.new(1.0276529788971,6.6212038993835,-63.145195007324);
+						Orientation = Vector3.new(15.390000343323,146.67999267578,11.140000343323);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(223/255,223/255,74/85);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 42;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,248/255,248/255);
+						CFrame = CFrame.new(0.40821498632431,5.238263130188,-63.713172912598,-0.99934333562851,0.010848803445697,-0.034572161734104,0.0091770039871335,0.99879777431488,0.048153888434172,0.035053011029959,0.047804996371269,-0.99824148416519);
+						BrickColor = BrickColor.new(248/255,248/255,248/255);
+						Size = Vector3.new(0.20000000298023,0.20000000298023,0.56000000238419);
+						Rotation = Vector3.new(-177.24000549316,-1.9800000190735,-179.38000488281);
+						Anchored = true;
+						Name = "Pupil";
+						Position = Vector3.new(0.40821498632431,5.238263130188,-63.713172912598);
+						Orientation = Vector3.new(-2.7599999904633,-178.02000427246,0.52999997138977);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(248/255,248/255,248/255);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 43;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,248/255,248/255);
+						CFrame = CFrame.new(-0.41128200292587,5.2552618980408,-63.67945098877,-0.99934333562851,0.010848803445697,-0.034572161734104,0.0091770039871335,0.99879777431488,0.048153888434172,0.035053011029959,0.047804996371269,-0.99824148416519);
+						BrickColor = BrickColor.new(248/255,248/255,248/255);
+						Size = Vector3.new(0.20000000298023,0.20000000298023,0.56000000238419);
+						Rotation = Vector3.new(-177.24000549316,-1.9800000190735,-179.38000488281);
+						Anchored = true;
+						Name = "Pupil";
+						Position = Vector3.new(-0.41128200292587,5.2552618980408,-63.67945098877);
+						Orientation = Vector3.new(-2.7599999904633,-178.02000427246,0.52999997138977);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(248/255,248/255,248/255);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 44;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(1/15,1/15,1/15);
+						CFrame = CFrame.new(0.030665999278426,4.8826551437378,-64.377174377441,-0.01513500418514,0.12268000096083,0.99233090877533,0.04796801134944,0.99139100313187,-0.12183218449354,-0.99873423576355,0.045756209641695,-0.020889421924949);
+						BrickColor = BrickColor.new(1/15,1/15,1/15);
+						Size = Vector3.new(0.20000000298023,0.20000000298023,0.38999998569489);
+						Rotation = Vector3.new(99.730003356934,82.900001525879,-97.029998779297);
+						Anchored = true;
+						Name = "Nose";
+						Position = Vector3.new(0.030665999278426,4.8826551437378,-64.377174377441);
+						Orientation = Vector3.new(7,91.209999084473,2.7699999809265);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(1/15,1/15,1/15);
+						TopSurface = Enum.SurfaceType.SmoothNoOutlines;
+					};
+					Children = {};
+				};
+				{
+					ID = 45;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(1/15,1/15,1/15);
+						CFrame = CFrame.new(-0.089458003640175,4.9039001464844,-64.374122619629,-0.015136001631618,-0.034253008663654,0.99929863214493,0.04797000810504,0.9982373714447,0.034943219274282,-0.99873411655426,0.048465259373188,-0.013466205447912);
+						BrickColor = BrickColor.new(1/15,1/15,1/15);
+						Size = Vector3.new(0.20000000298023,0.20000000298023,0.38999998569489);
+						Rotation = Vector3.new(-111.08000183105,87.849998474121,113.83999633789);
+						Anchored = true;
+						Name = "Nose";
+						Position = Vector3.new(-0.089458003640175,4.9039001464844,-64.374122619629);
+						Orientation = Vector3.new(-2,90.769996643066,2.75);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(1/15,1/15,1/15);
+						TopSurface = Enum.SurfaceType.SmoothNoOutlines;
+					};
+					Children = {};
+				};
+				{
+					ID = 46;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(33/85,19/51,98/255);
+						CFrame = CFrame.new(-0.0091509995982051,4.1491680145264,-63.234077453613,0.99981725215912,0.010849472135305,0.015742413699627,-0.010083002969623,0.99879765510559,-0.047976475208998,-0.016244003549218,0.047808974981308,0.99872446060181);
+						BrickColor = BrickColor.new(33/85,19/51,98/255);
+						Size = Vector3.new(0.85000002384186,1.0600003004074,0.62999993562698);
+						Rotation = Vector3.new(2.75,0.89999997615814,-0.62000000476837);
+						Anchored = true;
+						Name = "Neck";
+						Position = Vector3.new(-0.0091509995982051,4.1491680145264,-63.234077453613);
+						Orientation = Vector3.new(2.75,0.89999997615814,-0.5799999833107);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(33/85,19/51,98/255);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 47;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Symmetric;
+						BottomSurface = Enum.SurfaceType.Weld;
+						BrickColor = BrickColor.new(229/255,76/85,223/255);
+						Color = Color3.new(229/255,76/85,223/255);
+						CFrame = CFrame.new(-0.006184000056237,4.4219870567322,-63.218162536621,0.99981725215912,0.010849472135305,0.015742413699627,-0.010083002969623,0.99879765510559,-0.047976475208998,-0.016244003549218,0.047808974981308,0.99872446060181);
+						Anchored = true;
+						Size = Vector3.new(2,1,1);
+						Rotation = Vector3.new(2.75,0.89999997615814,-0.62000000476837);
+						Transparency = 1;
+						Name = "Middle";
+						Position = Vector3.new(-0.006184000056237,4.4219870567322,-63.218162536621);
+						Orientation = Vector3.new(2.75,0.89999997615814,-0.5799999833107);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(229/255,76/85,223/255);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {
+						{
+							ID = 48;
+							Type = "SpecialMesh";
+							Properties = {
+								MeshType = Enum.MeshType.Brick;
+							};
+							Children = {};
+						};
+						{
+							ID = 49;
+							Type = "Sound";
+							Properties = {
+								MinDistance = 0;
+								Name = "scream";
+								EmitterSize = 0;
+								SoundId = "http://www.roblox.com/asset/?id=186853843";
+								Volume = 0.85000002384186;
+							};
+							Children = {};
+						};
+						{
+							ID = 50;
+							Type = "Sound";
+							Properties = {
+								MinDistance = 0;
+								Name = "song";
+								EmitterSize = 0;
+								SoundId = "http://www.roblox.com/asset/?id=273304387";
+								Volume = 0.85000002384186;
+							};
+							Children = {};
+						};
+					};
+				};
+				{
+					ID = 51;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(1/15,1/15,1/15);
+						CFrame = CFrame.new(-0.6246150135994,5.9267249107361,-63.019645690918,-0.93990033864975,-0.17601093649864,-0.29258766770363,-0.19834607839584,0.97894310951233,0.048261906951666,0.27793207764626,0.10339499264956,-0.95502001047134);
+						BrickColor = BrickColor.new(1/15,1/15,1/15);
+						Size = Vector3.new(0.41999989748001,0.24999997019768,0.20000000298023);
+						Rotation = Vector3.new(-177.11000061035,-17.010000228882,169.38999938965);
+						Anchored = true;
+						Name = "Left Ear";
+						Position = Vector3.new(-0.6246150135994,5.9267249107361,-63.019645690918);
+						Orientation = Vector3.new(-2.7699999809265,-162.9700012207,-11.449999809265);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(1/15,1/15,1/15);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 52;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(223/255,223/255,74/85);
+						CFrame = CFrame.new(-0.77125197649002,6.6302609443665,-62.960105895996,-0.93990033864975,-0.17601093649864,-0.29258766770363,-0.19834607839584,0.97894310951233,0.048261906951666,0.27793207764626,0.10339499264956,-0.95502001047134);
+						BrickColor = BrickColor.new(223/255,223/255,74/85);
+						Size = Vector3.new(0.60999995470047,1.1699999570847,0.30000001192093);
+						Rotation = Vector3.new(-177.11000061035,-17.010000228882,169.38999938965);
+						Anchored = true;
+						Name = "Left Ear";
+						Position = Vector3.new(-0.77125197649002,6.6302609443665,-62.960105895996);
+						Orientation = Vector3.new(-2.7699999809265,-162.9700012207,-11.449999809265);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(223/255,223/255,74/85);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 53;
+					Type = "UnionOperation";
+					Properties = {
+						CFrame = CFrame.new(0,4.1427240371704,-63.398002624512,-0.095655985176563,0.0067000547423959,0.99539196491241,-0.19505296647549,0.98046523332596,-0.025343945249915,-0.97611689567566,-0.19657847285271,-0.092480503022671);
+						Color = Color3.new(248/255,217/255,109/255);
+						UsePartColor = true;
+						brickColor = BrickColor.new(248/255,217/255,109/255);
+						BrickColor = BrickColor.new(248/255,217/255,109/255);
+						Rotation = Vector3.new(164.66999816895,84.5,-175.99000549316);
+						Transparency = 1;
+						Name = "Jaw2";
+						Position = Vector3.new(0,4.1427240371704,-63.398002624512);
+						Orientation = Vector3.new(1.4500000476837,95.309997558594,-11.25);
+						Material = Enum.Material.SmoothPlastic;
+						Anchored = true;
+						Size = Vector3.new(2.1459369659424,0.51784205436707,2.0522079467773);
+					};
+					Children = {};
+				};
+				{
+					ID = 54;
+					Type = "UnionOperation";
+					Properties = {
+						Color = Color3.new(248/255,217/255,109/255);
+						Anchored = true;
+						CFrame = CFrame.new(0.0074350000359118,5.1854767799377,-63.166023254395,-0.99976152181625,0.010849423706532,-0.018950942903757,0.0099289957433939,0.99879777431488,0.048005610704422,0.019448990002275,0.04780599847436,-0.99866735935211);
+						Rotation = Vector3.new(-177.25,-1.0900000333786,-179.38000488281);
+						BrickColor = BrickColor.new(248/255,217/255,109/255);
+						brickColor = BrickColor.new(248/255,217/255,109/255);
+						Position = Vector3.new(0.0074350000359118,5.1854767799377,-63.166023254395);
+						Orientation = Vector3.new(-2.75,-178.91000366211,0.56999999284744);
+						Material = Enum.Material.SmoothPlastic;
+						UsePartColor = true;
+						Size = Vector3.new(2.0070490837097,1.4400008916855,1.8576222658157);
+					};
+					Children = {};
+				};
+				{
+					ID = 55;
+					Type = "UnionOperation";
+					Properties = {
+						Color = Color3.new(248/255,217/255,109/255);
+						UsePartColor = true;
+						CFrame = CFrame.new(-0.0059549999423325,5.503161907196,-63.818977355957,-0.99982875585556,0.015555954538286,-0.010023549199104,0.0097979968413711,0.90448951721191,0.42638346552849,0.015698995441198,0.42621228098869,-0.90448701381683);
+						BrickColor = BrickColor.new(248/255,217/255,109/255);
+						Rotation = Vector3.new(-154.75999450684,-0.56999999284744,-179.11000061035);
+						brickColor = BrickColor.new(248/255,217/255,109/255);
+						Name = "ewww";
+						Position = Vector3.new(-0.0059549999423325,5.503161907196,-63.818977355957);
+						Orientation = Vector3.new(-25.239999771118,-179.36999511719,0.62000000476837);
+						Material = Enum.Material.SmoothPlastic;
+						Anchored = true;
+						Size = Vector3.new(1.3698754310608,0.21331843733788,0.20167681574821);
+					};
+					Children = {};
+				};
+				{
+					ID = 56;
+					Type = "UnionOperation";
+					Properties = {
+						Color = Color3.new(248/255,217/255,109/255);
+						UsePartColor = true;
+						CFrame = CFrame.new(-0.0072360001504421,5.4451141357422,-63.86157989502,-0.99982911348343,0.014022125862539,-0.012052675709128,0.0098120011389256,0.95485109090805,0.29692304134369,0.015672001987696,0.29675403237343,-0.95482540130615);
+						BrickColor = BrickColor.new(248/255,217/255,109/255);
+						Rotation = Vector3.new(-162.72999572754,-0.68999999761581,-179.19999694824);
+						brickColor = BrickColor.new(248/255,217/255,109/255);
+						Name = "eyelid";
+						Position = Vector3.new(-0.0072360001504421,5.4451141357422,-63.86157989502);
+						Orientation = Vector3.new(-17.270000457764,-179.2799987793,0.58999997377396);
+						Material = Enum.Material.SmoothPlastic;
+						Anchored = true;
+						Size = Vector3.new(1.3698754310608,0.21331843733788,0.20167681574821);
+					};
+					Children = {};
+				};
+				{
+					ID = 57;
+					Type = "UnionOperation";
+					Properties = {
+						Color = Color3.new(9/85,14/85,53/255);
+						Anchored = true;
+						CFrame = CFrame.new(-0.0094489995390177,5.2866010665894,-63.898170471191,-0.99982923269272,0.010361043736339,-0.015305779874325,0.0097130015492439,0.99907785654068,0.041823800653219,0.015725003555417,0.041667997837067,-0.99900776147842);
+						BrickColor = BrickColor.new(9/85,14/85,53/255);
+						Rotation = Vector3.new(-177.60000610352,-0.87999999523163,-179.41000366211);
+						Transparency = 1;
+						brickColor = BrickColor.new(9/85,14/85,53/255);
+						Position = Vector3.new(-0.0094489995390177,5.2866010665894,-63.898170471191);
+						Orientation = Vector3.new(-2.4000000953674,-179.11999511719,0.56000000238419);
+						Material = Enum.Material.SmoothPlastic;
+						Name = "lid";
+						Size = Vector3.new(1.3698785305023,0.91332149505615,0.20168921351433);
+					};
+					Children = {};
+				};
+				{
+					ID = 58;
+					Type = "UnionOperation";
+					Properties = {
+						Color = Color3.new(248/255,248/255,248/255);
+						Anchored = true;
+						Rotation = Vector3.new(-14.130000114441,-88.349998474121,-13.020000457764);
+						Name = "teeth1";
+						Position = Vector3.new(0.0023610000498593,4.2698140144348,-63.706184387207);
+						Orientation = Vector3.new(-0.40000000596046,-88.389999389648,1.1000000238419);
+						Material = Enum.Material.SmoothPlastic;
+						CFrame = CFrame.new(0.0023610000498593,4.2698140144348,-63.706184387207,0.028140008449554,0.0065089846029878,-0.99958288669586,0.019214008003473,0.99979054927826,0.0070512453094125,0.9994193315506,-0.019404413178563,0.028009051457047);
+						Size = Vector3.new(1.518288731575,0.36681437492371,1.9946689605713);
+					};
+					Children = {};
+				};
+				{
+					ID = 59;
+					Type = "UnionOperation";
+					Properties = {
+						Color = Color3.new(248/255,248/255,248/255);
+						Anchored = true;
+						Rotation = Vector3.new(-17.229999542236,-88.300003051758,-7.8200001716614);
+						Transparency = 1;
+						Name = "teeth2";
+						Position = Vector3.new(0.0026209999341518,4.1515760421753,-63.64331817627);
+						Orientation = Vector3.new(-0.5,-88.379997253418,9.3999996185303);
+						Material = Enum.Material.SmoothPlastic;
+						CFrame = CFrame.new(0.0026209999341518,4.1515760421753,-63.64331817627,0.029378993436694,0.0040359976701438,-0.99956023693085,0.16325294971466,0.98654526472092,0.0087817627936602,0.98614674806595,-0.16343915462494,0.028324818238616);
+						Size = Vector3.new(1.518288731575,0.36681437492371,1.9946689605713);
+					};
+					Children = {};
+				};
+				{
+					ID = 60;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,248/255,248/255);
+						CFrame = CFrame.new(0.39934900403023,5.2578420639038,-63.700645446777,-0.99986737966537,0.010849857702851,-0.01214449852705,0.010256003588438,0.99879777431488,0.047936901450157,0.012650004588068,0.047805987298489,-0.99877661466599);
+						BrickColor = BrickColor.new(248/255,248/255,248/255);
+						Size = Vector3.new(0.5,0.39999997615814,0.5);
+						Rotation = Vector3.new(-177.25,-0.69999998807907,-179.38000488281);
+						Anchored = true;
+						Name = "Eyes";
+						Position = Vector3.new(0.39934900403023,5.2578420639038,-63.700645446777);
+						Orientation = Vector3.new(-2.75,-179.30000305176,0.58999997377396);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(248/255,248/255,248/255);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {
+						{
+							ID = 61;
+							Type = "PointLight";
+							Properties = {
+								Range = 4;
+							};
+							Children = {};
+						};
+					};
+				};
+				{
+					ID = 62;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,248/255,248/255);
+						CFrame = CFrame.new(-0.42135199904442,5.266056060791,-63.685813903809,-0.99993586540222,0.010848777368665,0.0032561963889748,0.010991998948157,0.99879777431488,0.047773260623217,-0.0027339998632669,0.047805987298489,-0.99885296821594);
+						BrickColor = BrickColor.new(248/255,248/255,248/255);
+						Size = Vector3.new(0.5,0.39999997615814,0.5);
+						Rotation = Vector3.new(-177.25999450684,0.18999999761581,-179.38000488281);
+						Anchored = true;
+						Name = "Eyes";
+						Position = Vector3.new(-0.42135199904442,5.266056060791,-63.685813903809);
+						Orientation = Vector3.new(-2.7400000095367,179.80999755859,0.62999999523163);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(248/255,248/255,248/255);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {
+						{
+							ID = 63;
+							Type = "PointLight";
+							Properties = {
+								Range = 4;
+							};
+							Children = {};
+						};
+					};
+				};
+				{
+					ID = 64;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(33/85,19/51,98/255);
+						CFrame = CFrame.new(0.40362200140953,5.2422308921814,-63.69261932373,-0.99934333562851,0.010848803445697,-0.034572161734104,0.0091770039871335,0.99879777431488,0.048153888434172,0.035053011029959,0.047804996371269,-0.99824148416519);
+						BrickColor = BrickColor.new(33/85,19/51,98/255);
+						Size = Vector3.new(0.35000002384186,0.28999999165535,0.56000000238419);
+						Rotation = Vector3.new(-177.24000549316,-1.9800000190735,-179.38000488281);
+						Anchored = true;
+						Name = "Iris";
+						Position = Vector3.new(0.40362200140953,5.2422308921814,-63.69261932373);
+						Orientation = Vector3.new(-2.7599999904633,-178.02000427246,0.52999997138977);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(33/85,19/51,98/255);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 65;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(33/85,19/51,98/255);
+						CFrame = CFrame.new(-0.42125299572945,5.2503409385681,-63.674186706543,-0.99982666969299,0.010849117301404,-0.015131783671677,0.010111995972693,0.99879777431488,0.047967310994864,0.015633994713426,0.047805983573198,-0.99873429536819);
+						BrickColor = BrickColor.new(33/85,19/51,98/255);
+						Size = Vector3.new(0.37999999523163,0.28999999165535,0.55000001192093);
+						Rotation = Vector3.new(-177.25,-0.87000000476837,-179.38000488281);
+						Anchored = true;
+						Name = "Iris";
+						Position = Vector3.new(-0.42125299572945,5.2503409385681,-63.674186706543);
+						Orientation = Vector3.new(-2.75,-179.13000488281,0.5799999833107);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(33/85,19/51,98/255);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 66;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,217/255,109/255);
+						CFrame = CFrame.new(0.045788001269102,4.2418699264526,-62.669258117676,-0.018472010269761,0.0020780123304576,0.99982726573944,-0.44417726993561,0.89588242769241,-0.010068240575492,-0.89574855566025,-0.44428646564484,-0.015625743195415);
+						BrickColor = BrickColor.new(248/255,217/255,109/255);
+						Size = Vector3.new(0.27999991178513,0.27999997138977,2);
+						Rotation = Vector3.new(147.19999694824,88.940002441406,-173.58000183105);
+						Anchored = true;
+						Name = "Jaw Articulation";
+						Position = Vector3.new(0.045788001269102,4.2418699264526,-62.669258117676);
+						Orientation = Vector3.new(0.5799999833107,90.900001525879,-26.370000839233);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(248/255,217/255,109/255);
+						TopSurface = Enum.SurfaceType.SmoothNoOutlines;
+					};
+					Children = {};
+				};
+				{
+					ID = 67;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,217/255,109/255);
+						CFrame = CFrame.new(0.014956999570131,4.4043431282043,-62.500877380371,-0.016143998131156,-0.0092129837721586,0.99982726573944,-0.88734990358353,0.46098646521568,-0.010080057196319,-0.46081393957138,-0.8873593211174,-0.015617305412889);
+						BrickColor = BrickColor.new(248/255,217/255,109/255);
+						Size = Vector3.new(0.27999991178513,0.27999997138977,1.9700000286102);
+						Rotation = Vector3.new(147.16000366211,88.940002441406,150.28999328613);
+						Anchored = true;
+						Name = "Jaw Articulation";
+						Position = Vector3.new(0.014956999570131,4.4043431282043,-62.500877380371);
+						Orientation = Vector3.new(0.5799999833107,90.889999389648,-62.549999237061);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(248/255,217/255,109/255);
+						TopSurface = Enum.SurfaceType.SmoothNoOutlines;
+					};
+					Children = {};
+				};
+				{
+					ID = 68;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Anchored = true;
+						Rotation = Vector3.new(-177.25,-1.0900000333786,-179.38000488281);
+						Size = Vector3.new(5.6199998855591,0.20000000298023,0.20000000298023);
+						Name = "Jaw Joint";
+						Position = Vector3.new(0.031215999275446,4.4291391372681,-62.846839904785);
+						Orientation = Vector3.new(-2.75,-178.91000366211,0.56999999284744);
+						Material = Enum.Material.SmoothPlastic;
+						CFrame = CFrame.new(0.031215999275446,4.4291391372681,-62.846839904785,-0.99976152181625,0.010849423706532,-0.018950942903757,0.0099289957433939,0.99879777431488,0.048005610704422,0.019448990002275,0.04780599847436,-0.99866735935211);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {
+						{
+							ID = 69;
+							Type = "BlockMesh";
+							Properties = {
+								Scale = Vector3.new(0.40000000596046,0.40000000596046,0.40000000596046);
+							};
+							Children = {};
+						};
+					};
+				};
+				{
+					ID = 70;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Anchored = true;
+						Rotation = Vector3.new(-177.25,-1.0900000333786,-179.38000488281);
+						Size = Vector3.new(5.6199998855591,0.20000000298023,0.20000000298023);
+						Name = "Jaw Joint";
+						Position = Vector3.new(0.033946998417377,4.4210000038147,-62.677040100098);
+						Orientation = Vector3.new(-2.75,-178.91000366211,0.56999999284744);
+						Material = Enum.Material.SmoothPlastic;
+						CFrame = CFrame.new(0.033946998417377,4.4210000038147,-62.677040100098,-0.99976152181625,0.010849423706532,-0.018950942903757,0.0099289957433939,0.99879777431488,0.048005610704422,0.019448990002275,0.04780599847436,-0.99866735935211);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {
+						{
+							ID = 71;
+							Type = "BlockMesh";
+							Properties = {
+								Scale = Vector3.new(0.40000000596046,0.40000000596046,0.40000000596046);
+							};
+							Children = {};
+						};
+					};
+				};
+				{
+					ID = 72;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(41/51,41/51,41/51);
+						CFrame = CFrame.new(-0.91753000020981,4.3941850662231,-62.738471984863,-0.99976152181625,0.010849423706532,-0.018950942903757,0.0099289957433939,0.99879777431488,0.048005610704422,0.019448990002275,0.04780599847436,-0.99866735935211);
+						BrickColor = BrickColor.new(41/51,41/51,41/51);
+						Size = Vector3.new(0.20000000298023,0.30000001192093,0.38999998569489);
+						Rotation = Vector3.new(-177.25,-1.0900000333786,-179.38000488281);
+						Anchored = true;
+						Name = "Jaw and Head Connector";
+						Position = Vector3.new(-0.91753000020981,4.3941850662231,-62.738471984863);
+						Orientation = Vector3.new(-2.75,-178.91000366211,0.56999999284744);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(41/51,41/51,41/51);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 73;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(41/51,41/51,41/51);
+						CFrame = CFrame.new(0.99259597063065,4.4149289131165,-62.767723083496,-0.99976152181625,0.010849423706532,-0.018950942903757,0.0099289957433939,0.99879777431488,0.048005610704422,0.019448990002275,0.04780599847436,-0.99866735935211);
+						BrickColor = BrickColor.new(41/51,41/51,41/51);
+						Size = Vector3.new(0.20000000298023,0.30000001192093,0.38999998569489);
+						Rotation = Vector3.new(-177.25,-1.0900000333786,-179.38000488281);
+						Anchored = true;
+						Name = "Jaw and Head Connector";
+						Position = Vector3.new(0.99259597063065,4.4149289131165,-62.767723083496);
+						Orientation = Vector3.new(-2.75,-178.91000366211,0.56999999284744);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(41/51,41/51,41/51);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 74;
+					Type = "Part";
+					Properties = {
+						FormFactor = Enum.FormFactor.Custom;
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,217/255,109/255);
+						CFrame = CFrame.new(-0.75975400209427,6.6282649040222,-62.92195892334,-0.93990033864975,-0.17601093649864,-0.29258766770363,-0.19834607839584,0.97894310951233,0.048261906951666,0.27793207764626,0.10339499264956,-0.95502001047134);
+						BrickColor = BrickColor.new(248/255,217/255,109/255);
+						Size = Vector3.new(0.76999992132187,1.289999961853,0.30000001192093);
+						Rotation = Vector3.new(-177.11000061035,-17.010000228882,169.38999938965);
+						Anchored = true;
+						Name = "Left Ear";
+						Position = Vector3.new(-0.75975400209427,6.6282649040222,-62.92195892334);
+						Orientation = Vector3.new(-2.7699999809265,-162.9700012207,-11.449999809265);
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(248/255,217/255,109/255);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 75;
+					Type = "Script";
+					Properties = {
+						Name = "Weld";
+					};
+					Children = {};
+				};
+			};
+		};
+		{
+			ID = 76;
+			Type = "Model";
+			Properties = {
+				Name = "Legg";
+			};
+			Children = {
+				{
+					ID = 77;
+					Type = "Part";
+					Properties = {
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(1,14/15,28/51);
+						Anchored = true;
+						BrickColor = BrickColor.new(253/255,78/85,47/85);
+						brickColor = BrickColor.new(253/255,78/85,47/85);
+						Position = Vector3.new(0.50916701555252,0.94000500440598,-63.357597351074);
+						Size = Vector3.new(0.89000004529953,1.8800001144409,0.87000000476837);
+						Material = Enum.Material.SmoothPlastic;
+						CFrame = CFrame.new(0.50916701555252,0.94000500440598,-63.357597351074,1,0,0,0,1,0,0,0,1);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 78;
+					Type = "Part";
+					Properties = {
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,217/255,109/255);
+						Anchored = true;
+						BrickColor = BrickColor.new(248/255,217/255,109/255);
+						brickColor = BrickColor.new(248/255,217/255,109/255);
+						Position = Vector3.new(0.50916701555252,1.0849939584732,-63.357597351074);
+						Size = Vector3.new(1.0499999523163,2.0499999523163,1.0499999523163);
+						Material = Enum.Material.SmoothPlastic;
+						CFrame = CFrame.new(0.50916701555252,1.0849939584732,-63.357597351074,1,0,0,0,1,0,0,0,1);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 79;
+					Type = "Part";
+					Properties = {
+						BottomSurface = Enum.SurfaceType.Smooth;
+						CanCollide = false;
+						CFrame = CFrame.new(0.51851999759674,1.0658179521561,-63.351322174072,1,0,0,0,0.99999988079071,0,0,0,1);
+						Transparency = 1;
+						Name = "Middle";
+						Position = Vector3.new(0.51851999759674,1.0658179521561,-63.351322174072);
+						Size = Vector3.new(1,2,1);
+						Material = Enum.Material.SmoothPlastic;
+						Anchored = true;
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 80;
+					Type = "Script";
+					Properties = {
+						Name = "Weld";
+					};
+					Children = {};
+				};
+			};
+		};
+		{
+			ID = 81;
+			Type = "Model";
+			Properties = {
+				Name = "Arm";
+			};
+			Children = {
+				{
+					ID = 82;
+					Type = "Part";
+					Properties = {
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(1,14/15,28/51);
+						Anchored = true;
+						BrickColor = BrickColor.new(253/255,78/85,47/85);
+						brickColor = BrickColor.new(253/255,78/85,47/85);
+						Position = Vector3.new(1.4808460474014,2.9276440143585,-63.357597351074);
+						Size = Vector3.new(0.89000004529953,1.8800001144409,0.87000000476837);
+						Material = Enum.Material.SmoothPlastic;
+						CFrame = CFrame.new(1.4808460474014,2.9276440143585,-63.357597351074,1,0,0,0,1,0,0,0,1);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 83;
+					Type = "Part";
+					Properties = {
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,217/255,109/255);
+						Anchored = true;
+						BrickColor = BrickColor.new(248/255,217/255,109/255);
+						brickColor = BrickColor.new(248/255,217/255,109/255);
+						Position = Vector3.new(1.4808460474014,3.072634935379,-63.357597351074);
+						Size = Vector3.new(1.0499999523163,2.0499999523163,1.0499999523163);
+						Material = Enum.Material.SmoothPlastic;
+						CFrame = CFrame.new(1.4808460474014,3.072634935379,-63.357597351074,1,0,0,0,1,0,0,0,1);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 84;
+					Type = "Part";
+					Properties = {
+						BottomSurface = Enum.SurfaceType.Smooth;
+						CanCollide = false;
+						CFrame = CFrame.new(1.4902000427246,3.0534570217133,-63.351322174072,1,0,0,0,0.99999988079071,0,0,0,1);
+						Transparency = 1;
+						Name = "Middle";
+						Position = Vector3.new(1.4902000427246,3.0534570217133,-63.351322174072);
+						Size = Vector3.new(1,2,1);
+						Material = Enum.Material.SmoothPlastic;
+						Anchored = true;
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 85;
+					Type = "Script";
+					Properties = {
+						Name = "Weld";
+					};
+					Children = {};
+				};
+			};
+		};
+		{
+			ID = 86;
+			Type = "Model";
+			Properties = {
+				Name = "Tors";
+			};
+			Children = {
+				{
+					ID = 87;
+					Type = "Part";
+					Properties = {
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(248/255,217/255,109/255);
+						CFrame = CFrame.new(-0.0095710000023246,3.0534389019012,-63.351005554199,1,0,0,0,1,0,0,0,1);
+						BrickColor = BrickColor.new(248/255,217/255,109/255);
+						Size = Vector3.new(2.0499999523163,2.0499999523163,1.0499999523163);
+						Name = "Middle";
+						Position = Vector3.new(-0.0095710000023246,3.0534389019012,-63.351005554199);
+						Anchored = true;
+						Material = Enum.Material.SmoothPlastic;
+						brickColor = BrickColor.new(248/255,217/255,109/255);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 88;
+					Type = "Part";
+					Properties = {
+						BottomSurface = Enum.SurfaceType.Smooth;
+						Color = Color3.new(1,14/15,28/51);
+						Anchored = true;
+						BrickColor = BrickColor.new(253/255,78/85,47/85);
+						brickColor = BrickColor.new(253/255,78/85,47/85);
+						Position = Vector3.new(-0.0095710000023246,3.0534389019012,-63.351005554199);
+						Size = Vector3.new(1.7900002002716,1.6900001764297,1.1100000143051);
+						Material = Enum.Material.SmoothPlastic;
+						CFrame = CFrame.new(-0.0095710000023246,3.0534389019012,-63.351005554199,1,0,0,0,1,0,0,0,1);
+						TopSurface = Enum.SurfaceType.Smooth;
+					};
+					Children = {};
+				};
+				{
+					ID = 89;
+					Type = "Script";
+					Properties = {
+						Name = "Weld";
+					};
+					Children = {};
+				};
+			};
+		};
+		{
+			ID = 90;
+			Type = "ParticleEmitter";
+			Properties = {
+				Enabled = false;
+				Acceleration = Vector3.new(0,-25,0);
+				Color = ColorSequence.new({ColorSequenceKeypoint.new(0,Color3.new(25/51,4/255,4/255)),ColorSequenceKeypoint.new(1,Color3.new(25/51,4/255,4/255))});
+				VelocitySpread = 500;
+				Rate = inf;
+				Texture = "http://www.roblox.com/asset/?id=243457340";
+				Rotation = NumberRange.new(0,360);
+				Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0,0.30000001192093,0),NumberSequenceKeypoint.new(1,0.30000001192093,0)});
+				Name = "Blood";
+				Lifetime = NumberRange.new(0.40000000596046);
+				Speed = NumberRange.new(10);
+				LightEmission = 0.5;
+				SpreadAngle = Vector2.new(500,500);
+				Size = NumberSequence.new({NumberSequenceKeypoint.new(0,0.89999997615814,0),NumberSequenceKeypoint.new(1,0.89999997615814,0)});
+			};
+			Children = {};
+		};
+	};
+};
 
-local rsO=CFrame.new(1, 0.5, 0) * CFrame.Angles(0, 1.571, 0)
-local rsO1=CFrame.new(-0.5, 0.5, 0) * CFrame.Angles(0, 1.571, 0)
-local lhO=CFrame.new(-1, -1, 0) * CFrame.Angles(0, -1.571, 0)
-local lhO1=CFrame.new(-0.5, 1, 0) * CFrame.Angles(0, -1.571, 0)
-local rhO=CFrame.new(1, -1, 0) * CFrame.Angles(0, 1.571, 0)
-local rhO1=CFrame.new(0.5, 1, 0) * CFrame.Angles(0, 1.571, 0)
-local lsO=CFrame.new(-1, 0.5, 0) * CFrame.Angles(0, -1.571, 0)
-local lsO1=CFrame.new(0.5, 0.5, 0) * CFrame.Angles(0, -1.571, 0)
-local nec=CFrame.new(0, 1, 0) * CFrame.Angles(-1.571, 0, -3.142)
-local nec1= CFrame.new(0, -0.5, 0) * CFrame.Angles(-1.571, 0, -3.142)
-local rjO=CFrame.new(0, 0, 0) * CFrame.Angles(-1.571, 0, -3.142)
-local nek=nec
-
-effects.Name="Effects"
-effects.Parent=char
-
-local theme=Instance.new("Sound")
-theme.Name="Playing '"..mPlace:GetProductInfo(music).Name.."'"
-theme.PlaybackSpeed=speed
-theme.Looped=true
-theme.Parent=char
-theme.SoundId="rbxassetid://"..tostring(music)
-theme.Volume=2
-theme:Play()
-
-for i,v in pairs(char:children())do
-	if v:isA"Clothing" or v:isA"Hat"or v:isA"Accessory" or v:isA"ShirtGraphic"then
-		v:destroy()
-	end
-end
-
-
-
-local PURP0LE = Instance.new("ScreenGui")
-local ea = PURP0LE
-local TextLabel = Instance.new("TextLabel")
-local TextLabel_2 = Instance.new("TextLabel")
-local TextLabel_3 = Instance.new("TextLabel")
-local TextButton = Instance.new("TextLabel")
-local TextButton_2 = Instance.new("TextButton")
-local List_ = Instance.new("TextLabel")
-local TextLabel_4 = Instance.new("TextLabel")
-local UIListLayout_ = Instance.new("UIListLayout",List_)
-local TextLabel_5 = Instance.new("TextLabel")
-local TextLabel_6 = Instance.new("TextLabel")
-local TextLabel_7 = Instance.new("TextLabel")
-local TextLabel_8 = Instance.new("TextLabel")
-local TextLabel_9 = Instance.new("TextLabel")
-local TextLabel_10 = Instance.new("TextLabel")
-local TextLabel_11 = Instance.new("TextLabel")
-local TextLabel_12 = Instance.new("TextLabel")
-local TextLabel_13 = Instance.new("TextLabel")
-
-PURP0LE.Name = "PURP0LE"
-PURP0LE.Parent = plr.PlayerGui
-PURP0LE.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-TextLabel.Parent = PURP0LE
-TextLabel.BackgroundColor3 =purpleCol.Color
-TextLabel.BackgroundTransparency = 0.500
-TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(0.891454995, 0, 0.880165279, 0)
-TextLabel.Size = UDim2.new(0.0942263231, 0, 0.100000001, 0)
-TextLabel.Font = Enum.Font.SourceSansBold
-TextLabel.Text = ""
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
-
-TextLabel_2.Parent = TextLabel
-TextLabel_2.AnchorPoint = Vector2.new(0.5, 0.5)
-TextLabel_2.BackgroundColor3 = purpleCol.Color
-TextLabel_2.BackgroundTransparency = 0.500
-TextLabel_2.BorderSizePixel = 0
-TextLabel_2.Position = UDim2.new(0.5, 0, 0.5, 0)
-TextLabel_2.Size = UDim2.new(0.824999988, 0, 0.75, 0)
-TextLabel_2.Font = Enum.Font.SourceSansBold
-TextLabel_2.Text = "Kills: 0"
-TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.TextScaled = true
-TextLabel_2.TextSize = 14.000
-TextLabel_2.TextWrapped = true
-
-TextLabel_3.Parent = PURP0LE
-TextLabel_3.AnchorPoint = Vector2.new(0.5, 0.5)
-TextLabel_3.BackgroundColor3 = purpleCol.Color
-TextLabel_3.BackgroundTransparency = 0.500
-TextLabel_3.BorderSizePixel = 0
-TextLabel_3.Position = UDim2.new(0.467667431, 0, 0.929235518, 0)
-TextLabel_3.Size = UDim2.new(0.824999988, 0, 0.098140493, 0)
-TextLabel_3.Font = Enum.Font.SourceSansBold
-TextLabel_3.Text = "THE MAN BEHIND THE SLAUGHTER"
-TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_3.TextScaled = true
-TextLabel_3.TextSize = 14.000
-TextLabel_3.TextWrapped = true
-
-TextButton.Name = "TextButton"
-TextButton.Parent = ea
-TextButton.Active = true
-TextButton.BackgroundColor3 = purpleCol.Color
-TextButton.BackgroundTransparency = 0.500
-TextButton.BorderSizePixel = 0
-TextButton.Position = UDim2.new(0.799076259, 0, 0.726899385, 0)
-TextButton.Selectable = true
-TextButton.Size = UDim2.new(0.200000003, 0, 0.100000001, 0)
-TextButton.Font = Enum.Font.SourceSans
-TextButton.Text = ""
-TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextButton.TextScaled = true
-TextButton.TextSize = 14.000
-TextButton.TextWrapped = true
-
-TextButton_2.Parent = TextButton
-TextButton_2.AnchorPoint = Vector2.new(0.5, 0.5)
-TextButton_2.BackgroundColor3 = purpleCol.Color
-TextButton_2.BackgroundTransparency = 0.500
-TextButton_2.BorderSizePixel = 0
-TextButton_2.Position = UDim2.new(0.5, 0, 0.5, 0)
-TextButton_2.Size = UDim2.new(0.949999988, 0, 0.800000012, 0)
-TextButton_2.Font = Enum.Font.SourceSans
-TextButton_2.Text = "CONTROLS"
-TextButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextButton_2.TextScaled = true
-TextButton_2.TextSize = 14.000
-TextButton_2.TextWrapped = true
-
-List_.Name = "List"
-List_.Parent = ea
-List_.Active = true
-List_.BackgroundColor3 = purpleCol.Color
-List_.BackgroundTransparency = 0.500
-List_.BorderSizePixel = 0
-List_.Position = UDim2.new(0.7990762, 0, 0.190965086, 0)
-List_.Selectable = true
-List_.Size = UDim2.new(0.200000003, 0, 0.496303797, 0)
-List_.Visible = false
-List_.Font = Enum.Font.SourceSans
-List_.Text = ""
-List_.TextColor3 = Color3.fromRGB(255, 255, 255)
-List_.TextScaled = true
-List_.TextSize = 14.000
-List_.TextWrapped = true
-
-TextLabel_4.Parent = List_
-TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_4.BackgroundTransparency = 1.000
-TextLabel_4.Size = UDim2.new(1.00461888, 0, 0.100000001, 0)
-TextLabel_4.Font = Enum.Font.SourceSansBold
-TextLabel_4.Text = "Equip Knife - F"
-TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_4.TextScaled = true
-TextLabel_4.TextSize = 14.000
-TextLabel_4.TextWrapped = true
-
-UIListLayout_.SortOrder = Enum.SortOrder.LayoutOrder
-
-TextLabel_5.Parent = List_
-TextLabel_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_5.BackgroundTransparency = 1.000
-TextLabel_5.Size = UDim2.new(1.00461888, 0, 0.100000001, 0)
-TextLabel_5.Font = Enum.Font.SourceSansBold
-TextLabel_5.Text = "Stab - Click"
-TextLabel_5.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_5.TextScaled = true
-TextLabel_5.TextSize = 14.000
-TextLabel_5.TextWrapped = true
-
-TextLabel_5.Parent = List_
-TextLabel_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_5.BackgroundTransparency = 1.000
-TextLabel_5.Size = UDim2.new(1.00461888, 0, 0.100000001, 0)
-TextLabel_5.Font = Enum.Font.SourceSansBold
-TextLabel_5.Text = "Throw Knife - Z"
-TextLabel_5.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_5.TextScaled = true
-TextLabel_5.TextSize = 14.000
-TextLabel_5.TextWrapped = true
-
-TextLabel_6.Parent = List_
-TextLabel_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_6.BackgroundTransparency = 1.000
-TextLabel_6.Size = UDim2.new(1.00461888, 0, 0.100000001, 0)
-TextLabel_6.Font = Enum.Font.SourceSansBold
-TextLabel_6.Text = "Chest Stab -  X"
-TextLabel_6.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_6.TextScaled = true
-TextLabel_6.TextSize = 14.000
-TextLabel_6.TextWrapped = true
-
-TextLabel_7.Parent = List_
-TextLabel_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_7.BackgroundTransparency = 1.000
-TextLabel_7.Size = UDim2.new(1.00461888, 0, 0.100000001, 0)
-TextLabel_7.Font = Enum.Font.SourceSansBold
-TextLabel_7.Text = "Taunt - T"
-TextLabel_7.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_7.TextScaled = true
-TextLabel_7.TextSize = 14.000
-TextLabel_7.TextWrapped = true
-
-TextLabel_8.Parent = List_
-TextLabel_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_8.BackgroundTransparency = 1.000
-TextLabel_8.Size = UDim2.new(1.00461888, 0, 0.100000001, 0)
-TextLabel_8.Font = Enum.Font.SourceSansBold
-TextLabel_8.Text = "Springlock - P"
-TextLabel_8.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_8.TextScaled = true
-TextLabel_8.TextSize = 14.000
-TextLabel_8.TextWrapped = true
-
-TextLabel_9.Parent = List_
-TextLabel_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_9.BackgroundTransparency = 1.000
-TextLabel_9.Size = UDim2.new(1.00461888, 0, 0.100000001, 0)
-TextLabel_9.Font = Enum.Font.SourceSansBold
-TextLabel_9.Text = "Hide Gui - N"
-TextLabel_9.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_9.TextScaled = true
-TextLabel_9.TextSize = 14.000
-TextLabel_9.TextWrapped = true
-
-TextLabel_10.Parent = List_
-TextLabel_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_10.BackgroundTransparency = 1.000
-TextLabel_10.Size = UDim2.new(1.00461888, 0, 0.100000001, 0)
-TextLabel_10.Font = Enum.Font.SourceSansBold
-TextLabel_10.Text = "Mute - M"
-TextLabel_10.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_10.TextScaled = true
-TextLabel_10.TextSize = 14.000
-TextLabel_10.TextWrapped = true
-
-TextLabel_11.Parent = List_
-TextLabel_11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_11.BackgroundTransparency = 1.000
-TextLabel_11.Size = UDim2.new(1.00461888, 0, 0.100000001, 0)
-TextLabel_11.Font = Enum.Font.SourceSansBold
-TextLabel_11.Text = ""
-TextLabel_11.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_11.TextScaled = true
-TextLabel_11.TextSize = 14.000
-TextLabel_11.TextWrapped = true
-
-TextLabel_12.Parent = List_
-TextLabel_12.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_12.BackgroundTransparency = 1.000
-TextLabel_12.Size = UDim2.new(1.00461888, 0, 0.100000001, 0)
-TextLabel_12.Font = Enum.Font.SourceSansBold
-TextLabel_12.Text = "By QSparkedDreemurr"
-TextLabel_12.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_12.TextScaled = true
-TextLabel_12.TextSize = 14.000
-TextLabel_12.TextWrapped = true
-
-
-larm.Color=purpleCol.Color
-rarm.Color=purpleCol.Color
-lleg.Color=purpleCol.Color
-rleg.Color=purpleCol.Color
-head.Color=purpleCol.Color
-tors.Color=purpleCol.Color
-
-shirt.Parent=char
-shirt.ShirtTemplate="http://www.roblox.com/asset/?id=206928000"
-pants.Parent=char
-pants.PantsTemplate="http://www.roblox.com/asset/?id=206928035"
-
-animate.Parent=nil
-
-local animation = Instance.new("Animation")
-animation.AnimationId = "http://www.roblox.com/Asset?ID=180435571"
-local animTrack = hum:LoadAnimation(animation)
-animTrack:play()
-local souls=0
-wait(.1)
-animator.Parent=nil
-
-
-function swait(n)
-	if n==0 or n==nil then
-		game:GetService("RunService").Heartbeat:wait()
-	else
-		for i=1,n do
-			game:GetService("RunService").Heartbeat:wait()		
+local function Scan(item, parent)
+	local obj = Instance.new(item.Type)
+	if (item.ID) then
+		local awaiting = awaitRef[item.ID]
+		if (awaiting) then
+			awaiting[1][awaiting[2]] = obj
+			awaitRef[item.ID] = nil
+		else
+			partsWithId[item.ID] = obj
 		end
 	end
-end
-
-function weld(p0,p1,cf,cf1)
-	cf=cf or CFrame.new()
-	cf1=cf1 or CFrame.new()	
-	local w=Instance.new("Weld",p0)
-	w.Part0=p0
-	w.Part1=p1
-	w.C0=cf
-	w.C1=cf1
-	return w
-end
-
-function torsSound(id)
-	local s=Instance.new("Sound",tors)
-	s.Volume=10
-	s.SoundId="rbxassetid://"..tostring(id)
-	game.Debris:AddItem(s,1+s.TimeLength)
-	s:Play()
-	return s
-end
-
-function globalSound(id)
-	local s=Instance.new("Sound",char)
-	s.Volume=10
-	s.SoundId="rbxassetid://"..tostring(id)
-	game.Debris:AddItem(s,1+s.TimeLength)
-	s:Play()
-	return s
-end
-local cf=root.CFrame
-script.Face:clone().Parent=head
-script.RightLegHolster:clone().Parent=rleg
-for i,v in pairs(char:GetDescendants())do
-	if v:isA"BasePart"and v.Parent.Parent~=script then
-		v.Anchored=false
-	end
-end
-char:setPrimaryPartCFrame(cf)
-local faceW=weld(head,head.Face.Middle)
-local rleghw=weld(rleg,rleg.RightLegHolster.Middle)
-
-head.face:destroy()
-
-local cf,ang,rad,cos,sin=CFrame.new,CFrame.Angles,math.rad,math.cos,math.sin
-local V3={N=Vector3.new}
-
-function lerp(obj,cf,al)
-	obj.C0=obj.C0:lerp(cf,al)
-end
-
-local equip=false
-local attack=false
-local knife=Instance.new("Part")
-local knifeMsh=Instance.new("SpecialMesh")
-local att1=Instance.new("Attachment")
-local att2=Instance.new("Attachment")
-local trail=Instance.new("Trail")
-att1.Parent=knife
-att2.Parent=knife
-att1.Name="Attachment0"
-att2.Name="Attachment1"
-att1.Position=Vector3.new(0, 0.786, 0.03)
-att2.Position=Vector3.new(0, -0.17, 0.02)
-trail.Parent=knife
-trail.Texture="rbxassetid://1370408514"
-trail.Transparency=NumberSequence.new(.7)
-trail.Attachment0=att1
-trail.Attachment1=att2
-trail.Enabled=false
-trail.Lifetime=.5
-trail.MinLength=.125
-trail.WidthScale=NumberSequence.new(1)
-trail.LightInfluence=0
-trail.LightEmission=.8
-trail.TextureLength=1
-trail.TextureMode=Enum.TextureMode.Stretch
-knife.Size=Vector3.new(0.05, 2.07, 0.71)
-knife.CanCollide=false
-knifeMsh.Parent=knife
-knifeMsh.MeshId="http://www.roblox.com/asset/?id=121944778"
-knifeMsh.TextureId="http://www.roblox.com/asset/?id=130252453"
-knife.Parent=rarm
-knife.Name="Knife"
-local knifeWeld=weld(rarm,knife,cf(0, 0, 0, 1, -4.72902457e-07, -8.60913048e-08, -8.60912834e-08, 1.70530257e-13, -1.00000012, 5.80866072e-07, 1, -7.03356875e-08),cf(-0.0151977539, -1.06995964, -0.856681824, 1, 0, 0, 0, 0.999999881, 0, 0, 0, 1))
-local knifePosForward=cf(0, 0, 0, 1, 0, 0, 0, -0.984807312, -0.173647955, 0, 0.173647895, -0.984807789)+Vector3.new(0,-.4,.4)
-local knifePosNorm=cf(0, 0, 0, 1, -4.72902457e-07, -8.60913048e-08, -8.60912834e-08, 1.70530257e-13, -1.00000012, 5.80866072e-07, 1, -7.03356875e-08)
-local combo=0
-mouse.Button1Down:connect(function()
-	if equip and not attack then
-		local snd=torsSound(2174939388)
-		snd.PlaybackSpeed=1.3
-		if combo==0 then
-		combo=1
-			attack=true
-			for i=1,15 do
-				swait()
-				rs.C0=rs.C0:lerp(rsO*CFrame.Angles(-math.rad(25),0,math.rad(60))*cf(0,.6,0),.325)	
-			end
-		for i=1,40 do
-			swait()
-			rj.C0=rj.C0:lerp(rjO*CFrame.Angles(0,0,math.rad(25)),.1)
-			rs.C0=rs.C0:lerp(rsO*CFrame.Angles(-math.rad(25),0,math.rad(90))*cf(0,-.6,0),.1)
-			ls.C0=ls.C0:lerp(lsO*CFrame.Angles(-math.rad(6),0,0),.1)
-			--rh.C0=rh.C0:lerp(rhO*CFrame.Angles(-math.rad(2),0,0),.1)
-			--lh.C0=lh.C0:lerp(lhO*CFrame.Angles(-math.rad(2),0,0),.1)
-			neck.C0=neck.C0:lerp(nec*CFrame.Angles(0,0,-math.rad(25)),.1)
-		end
-		attack=false		
-		return
-		end	
-		if combo==1 then
-			combo=2 
-			attack=true
-			for i=1,15 do
-				swait()
-				rs.C0=rs.C0:lerp(rsO*ang(0,0,rad(130)),.325)
-			end
-			wait(.03)
-		for i=1,40 do
-			swait()
-			rj.C0=rj.C0:lerp(rjO*CFrame.Angles(0,0,math.rad(25)),.1)
-			rs.C0=rs.C0:lerp(rsO*CFrame.Angles(-math.rad(25),0,math.rad(8)),.1)
-			ls.C0=ls.C0:lerp(lsO*CFrame.Angles(-math.rad(6),0,0),.1)
-			--rh.C0=rh.C0:lerp(rhO*CFrame.Angles(-math.rad(2),0,0),.1)
-			--lh.C0=lh.C0:lerp(lhO*CFrame.Angles(-math.rad(2),0,0),.1)
-			neck.C0=neck.C0:lerp(nec*CFrame.Angles(0,0,-math.rad(25)),.1)
-		end
-		attack=false		
-		return
-			
-		end
-		if combo==2 then
-			combo=0
-			attack=true
-			for i=1,13 do
-			swait()
-			rs.C0=rs.C0:lerp(rsO*ang(rad(90+15),0,rad(130)),.325)
-			rj.C0=rj.C0:lerp(rjO*ang(0,0,rad(40)),.325)
-			end
-		for i=1,40 do
-			swait()
-			rj.C0=rj.C0:lerp(rjO*CFrame.Angles(0,0,math.rad(25)),.1)
-			rs.C0=rs.C0:lerp(rsO*CFrame.Angles(-math.rad(40),0,math.rad(3)),.1)
-			ls.C0=ls.C0:lerp(lsO*CFrame.Angles(-math.rad(6),0,0),.1)
-			--rh.C0=rh.C0:lerp(rhO*CFrame.Angles(-math.rad(2),0,0),.1)
-			--lh.C0=lh.C0:lerp(lhO*CFrame.Angles(-math.rad(2),0,0),.1)
-			neck.C0=neck.C0:lerp(nec*CFrame.Angles(0,0,-math.rad(25)),.1)
-		end
-		attack=false		
-		return
-			
-		end		
-	end
-end)
-
-local asd = Instance.new("ParticleEmitter")
-asd.Color = ColorSequence.new(Color3.fromRGB(255,0,0), Color3.fromRGB(255,0,0))
-asd.LightEmission = .1
-asd.Size = NumberSequence.new(0.2)
-asd.Texture = "http://www.roblox.com/asset/?ID=291880914"
-aaa = NumberSequence.new({NumberSequenceKeypoint.new(0, 0.2),NumberSequenceKeypoint.new(1, 5)})
-bbb = NumberSequence.new({NumberSequenceKeypoint.new(0, 1),NumberSequenceKeypoint.new(0.0636, 0), NumberSequenceKeypoint.new(1, 1)})
-asd.Transparency = bbb
-asd.Size = aaa
-asd.ZOffset = .9
-asd.Acceleration = Vector3.new(0, -5, 0)
-asd.LockedToPart = false
-asd.EmissionDirection = "Back"
-asd.Lifetime = NumberRange.new(1, 2)
-asd.Rotation = NumberRange.new(-100, 100)
-asd.RotSpeed = NumberRange.new(-100, 100)
-asd.Speed = NumberRange.new(2)
-asd.Enabled = false
-asd.VelocitySpread = 10000
-
-function bleed(victim,amount)
-local prtcl = asd:Clone()
-prtcl.Parent = victim
-prtcl:Emit(amount)
-end
-
-IN=Instance.new
-local Char=char
-local Plr=plr
-local naeeym2 = IN("BillboardGui",Char)
-naeeym2.AlwaysOnTop = true
-naeeym2.Size = UDim2.new(5,35,2,15)
-naeeym2.StudsOffset = V3.N(0,2.5,0)
-naeeym2.Adornee = Char.Head
-naeeym2.Name = "Name"
-local tecks2 = IN("TextLabel",naeeym2)
-tecks2.BackgroundTransparency = 1
-tecks2.TextScaled = true
-tecks2.BorderSizePixel = 0
-tecks2.Text = "William Afton"
-tecks2.Font = Enum.Font.Antique
-tecks2.TextSize = 30
-tecks2.TextStrokeTransparency = 0
-tecks2.TextColor3 = purpleCol.Color
-tecks2.TextStrokeColor3 = Color3.new(0,0,0)
-tecks2.Size = UDim2.new(1,0,0.5,0)
-tecks2.Parent = naeeym2
-
-local hitbox=Instance.new("Part",char)
-hitbox.Name="Hitbox"
-hitbox.CanCollide=false
-hitbox.Transparency=1
-hitbox.Size=Vector3.new(7/2,9/2,4.25)
-weld(root,hitbox,cf(0,0,-hitbox.Size.Z/2))
-
-local R6 = require(script:WaitForChild("R6Ragdoll"))
-local R15 = require(script:WaitForChild("R15Ragdoll"))
-
-function ragdoll(tar)
-	local hum=tar:findFirstChildOfClass"Humanoid"
-	if hum.RigType == Enum.HumanoidRigType.R6 then
-		R6(tar)
-	else
-		R15(tar)
-	end	
-end
-
-local aaa=false
-local wavee=false
-local springlocked=false
-local springT=false
-local awer=false
-local furryTime=false
-
-hitbox.Touched:connect(function(hit)
-	if hit==nil or hit.Parent==nil then return end
-	if hit.Parent:findFirstChildOfClass"Humanoid" and attack or awer then
-		if hit.Parent~=char then
-			if hit.Parent:findFirstChildOfClass"Humanoid".Health>0 then
-				hit.Parent:findFirstChildOfClass"Humanoid":takeDamage(math.huge)
-				bleed(hit,10)
-				globalSound(5153156097)
-				souls=souls+1
-				warn("killed "..hit.Parent.Name)
-				if not aaa then
-					aaa=true
-				local ogText=TextLabel_3.Text
-				local a={"MURDERER","KILLER","HELL","BURN","DIE","AFTON","THE MAN BEHIND THE SLAUGHTER"}
-				spawn(function()
-					for i=1,20 do
-						swait()
-						TextLabel_3.Text=a[math.random(1,#a)]
-						rs.C1=rsO1*cf(rad(math.random(-20,20)),rad(math.random(-20,20)),rad(math.random(-20,20)))
-						ls.C1=lsO1*cf(rad(math.random(-20,20)),rad(math.random(-20,20)),rad(math.random(-20,20)))
-						rh.C1=rhO1*cf(rad(math.random(-20,20)),rad(math.random(-20,20)),rad(math.random(-20,20)))
-						lh.C1=lhO1*cf(rad(math.random(-20,20)),rad(math.random(-20,20)),rad(math.random(-20,20)))
-						rj.C1=rjO*cf(rad(math.random(-20,20)),rad(math.random(-20,20)),rad(math.random(-20,20)))
-						neck.C1=nec1*cf(rad(math.random(-20,20)),rad(math.random(-20,20)),rad(math.random(-20,20)))								
-						for i,v in pairs(PURP0LE:GetDescendants())do
-							pcall(function()
-								v.Rotation=math.random(-5,5)
-							end)
-						end
-						TextLabel.Position=UDim2.new(0.891454995, math.random(-15,15), 0.880165279, math.random(-15,15))
-						TextLabel_2.Position=UDim2.new(0.5, math.random(-15,15), 0.5, math.random(-15,15))
-						TextLabel_3.Position=UDim2.new(0.467667431, math.random(-15,15), 0.929235518, math.random(-15,15))
-					end
-					rs.C1=rsO1
-					ls.C1=lsO1
-					rh.C1=rhO1
-					lh.C1=lhO1
-					rj.C1=rjO
-					neck.C1=nec1	
-					TextLabel_3.Text=ogText		
-					TextLabel.Position=UDim2.new(0.891454995, 0, 0.880165279, 0)
-					TextLabel_2.Position=UDim2.new(0.5, 0, 0.5, 0)
-					TextLabel_3.Position=UDim2.new(0.467667431, 0, 0.929235518, 0)	
-					for i,v in pairs(PURP0LE:GetDescendants())do
-						pcall(function()
-							v.Rotation=0
-						end)
-						end	
-			aaa=false			
-				end)
+	for p,v in pairs(item.Properties) do
+		if (type(v) == "string") then
+			local id = tonumber(v:match("^_R:(%w+)_$"))
+			if (id) then
+				if (partsWithId[id]) then
+					v = partsWithId[id]
+				else
+					awaitRef[id] = {obj, p}
+					v = nil
 				end
-				ragdoll(hit.Parent)
 			end
 		end
+		obj[p] = v
 	end
-end)
-
-function springlock()
-	if springlocked then return end
-	if attack then return end
-	if death then return end
-	if awer then return end
-	awer=true
-	equip=false
-	rleg.RightLegHolster:destroy()
-	local arm,headz,legg,tor=script.Arm:clone(),script.Headz:clone(),script.Legg:clone(),script.Tors:clone()
-	local arm1,arm2=arm:clone(),legg:clone()
-	local leg1,leg2=legg:clone(),legg:clone()		
-	headz.Parent=char
-	legg.Parent=char
-	tor.Parent=char
-	arm1.Parent=char
-	arm2.Parent=char
-	leg1.Parent=char
-	leg2.Parent=char
-	for i,v in pairs(char:GetDescendants())do
-		if v:isA"BasePart"and v.Parent.Parent~=script then
-			v.Anchored=false
-		end
-	end	
-	weld(arm1.Middle,larm)
-	weld(arm2.Middle,rarm)
-	weld(headz.Middle,head)
-	weld(leg1.Middle,lleg)
-	weld(leg2.Middle,rleg)
-	weld(tor.Middle,tors)	
-	local a=Instance.new("Sound",char)
-	a.SoundId="rbxassetid://1222876473"
-	a.Volume=10
-	a:Play()
-	theme:Stop()
-	theme.SoundId=""
-	root.Anchored=true
-	wait(4)
-	bleed(tors)
-	local blood=script.Blood:clone()
-	blood.Enabled=true
-	blood.Name="Springlock Bleed"
-	blood:clone().Parent=tors
-	blood:clone().Parent=larm
-	blood:clone().Parent=rarm
-	blood:clone().Parent=lleg
-	blood:clone().Parent=rleg
-	blood:clone().Parent=head
-	springlocked=true	
-	spawn(function()
-		repeat swait()
-			rs.C1=rsO1*cf(rad(math.random(-10,10)),rad(math.random(-10,10)),rad(math.random(-10,10)))
-			ls.C1=lsO1*cf(rad(math.random(-10,10)),rad(math.random(-10,10)),rad(math.random(-10,10)))
-			rh.C1=rhO1*cf(rad(math.random(-10,10)),rad(math.random(-10,10)),rad(math.random(-10,10)))
-			lh.C1=lhO1*cf(rad(math.random(-10,10)),rad(math.random(-10,10)),rad(math.random(-10,10)))
-			rj.C1=rjO*cf(rad(math.random(-10,10)),rad(math.random(-10,10)),rad(math.random(-10,10)))			
-		until springT
-		rs.C1=rsO1
-		ls.C1=lsO1
-		rh.C1=rhO1
-		lh.C1=lhO1
-		rj.C1=rjO		
-	end)
-		for i=1,130 do
-			swait()
-			rs.C0=rs.C0:lerp(rsO*ang(-rad(45),0,0),.1)
-			ls.C0=ls.C0:lerp(lsO*ang(-rad(45),0,0),.1)
-			rh.C0=rh.C0:lerp(rhO,.1)
-			lh.C0=lh.C0:lerp(lhO,.1)
-			neck.C0=neck.C0:lerp(nec*ang(-rad(22),0,0),.1)
-			rj.C0=rj.C0:lerp(rjO,.1)			
-	end	
-		for i=1,50 do
-			swait()
-			rs.C0=rs.C0:lerp(rsO*ang(-rad(45),0,0),.1)
-			ls.C0=ls.C0:lerp(lsO*ang(-rad(45),0,0),.1)
-			rh.C0=rh.C0:lerp(rhO,.1)
-			lh.C0=lh.C0:lerp(lhO,.1)
-			neck.C0=neck.C0:lerp(nec*ang(rad(10),0,0),.1)
-			rj.C0=rj.C0:lerp(rjO,.1)			
-	end		
-	
-		for i=1,130 do
-			swait()
-			rs.C0=rs.C0:lerp(rsO*ang(-rad(25),0,0),.1)
-			ls.C0=ls.C0:lerp(lsO*ang(-rad(25),0,0),.1)
-			rh.C0=rh.C0:lerp(rhO*ang(0,0,-rad(90)),.1)
-			lh.C0=lh.C0:lerp(lhO*ang(0,0,rad(90)),.1)
-			neck.C0=neck.C0:lerp(nec*ang(rad(27),0,0),.1)
-			rj.C0=rj.C0:lerp(rjO-V3.N(0,1.5,0),.1)			
-	end	
-		for i=1,150 do
-			swait()
-			rs.C0=rs.C0:lerp(rsO*ang(-rad(10),0,rad(120)),.1)
-			ls.C0=ls.C0:lerp(lsO*ang(-rad(35),0,0),.1)
-			rh.C0=rh.C0:lerp(rhO*ang(0,0,-rad(90)),.1)
-			lh.C0=lh.C0:lerp(lhO*ang(0,0,rad(90)),.1)
-			neck.C0=neck.C0:lerp(nec*ang(-rad(37),0,0),.1)
-			rj.C0=rj.C0:lerp(rjO-V3.N(0,1.5,0),.1)			
-	end	
-		for i=1,210 do
-			swait()
-			rs.C0=rs.C0:lerp(rsO*ang(-rad(25),0,0),.1)
-			ls.C0=ls.C0:lerp(lsO*ang(-rad(25),0,0),.1)
-			rh.C0=rh.C0:lerp(rhO*ang(0,0,-rad(90)),.1)
-			lh.C0=lh.C0:lerp(lhO*ang(0,0,rad(90)),.1)
-			neck.C0=neck.C0:lerp(nec*ang(rad(27),0,0),.1)
-			rj.C0=rj.C0:lerp(rjO-V3.N(0,1.5,0),.1)			
-	end	
-		for i=1,170 do
-			swait()
-			rs.C0=rs.C0:lerp(rsO*ang(-rad(25),0,0),.1)
-			ls.C0=ls.C0:lerp(lsO*ang(-rad(25),0,0),.1)
-			rh.C0=rh.C0:lerp(rhO*ang(-rad(10),0,0),.1)
-			lh.C0=lh.C0:lerp(lhO*ang(-rad(10),0,0),.1)
-			neck.C0=neck.C0:lerp(nec*ang(-rad(40),0,0),.1)
-			rj.C0=rj.C0:lerp(rjO*ang(rad(90),0,0)-V3.N(0,2.5,0),.1)			
-	end	
-		for i=1,50 do
-			swait()
-			rs.C0=rs.C0:lerp(rsO*ang(-rad(25),0,0),.1)
-			ls.C0=ls.C0:lerp(lsO*ang(-rad(25),0,0),.1)
-			rh.C0=rh.C0:lerp(rhO*ang(-rad(10),0,0),.1)
-			lh.C0=lh.C0:lerp(lhO*ang(-rad(10),0,0),.1)
-			neck.C0=neck.C0:lerp(nec*ang(0,0,0),.1)
-			rj.C0=rj.C0:lerp(rjO*ang(rad(90),0,0)-V3.N(0,2.5,0),.1)			
-	end		
-	wait(1)
-	for i,v in pairs(char:GetDescendants())do
-		if v:findFirstChild"Springlock Bleed"then
-			v["Springlock Bleed"]:destroy()
-		end
+	for _,c in pairs(item.Children) do
+		Scan(c, obj)
 	end
-	springT=true
-	wait(5)
-	local function darken(obj)
-		for i,v in pairs(obj:GetDescendants())do
-			if v:isA"BasePart"then
-				local col
-				if v.BrickColor==BrickColor.new("Daisy orange")then
-					col=Color3.fromRGB(109, 120, 54)
-					game:GetService("TweenService"):create(v,TweenInfo.new(1),{Color=col}):play()	
-				end	
-				if v.BrickColor==BrickColor.new("Cool yellow")then
-					col=Color3.fromRGB(124, 136, 61)
-					game:GetService("TweenService"):create(v,TweenInfo.new(1),{Color=col}):play()	
-				end						
-			end
-		end
-	end
-	darken(leg1)
-	darken(leg2)
-	darken(arm1)
-	darken(arm2)
-	darken(tor)
-	darken(headz)
-	headz.upperGone.Transparency=1
-	headz.upprGone.Transparency=1	
-	wait(3)
-	furryTime=true
-	wait(1)
-	globalSound(1615358778)
-	root.Anchored=false
-	hum.WalkSpeed=10
+	obj.Parent = parent
+	return obj
 end
 
-function throw()
-	if not attack and not awer and equip then
-		attack=true
-			for i=1,15 do
-				swait()
-				rs.C0=rs.C0:lerp(rsO*CFrame.Angles(-math.rad(25),0,math.rad(170)),.325)	
-		end
-		local hit=knife:clone()
-		hit.Parent=workspace
-		hit.Transparency=0
-		hit.Trail.Enabled=true
-		hit.Anchored=true
-		spawn(function()
-			hit.CFrame=cf(mouse.Hit.p,tors.Position)*ang(rad(90),0,0)
-			wait()
-			hit.Anchored=false
-			if mouse.Target then
-				weld(mouse.Target,hit,mouse.Target.CFrame:inverse(),hit.CFrame:inverse())
-				local hit=mouse.Target
-				if hit==nil or hit.Parent==nil then return end
-				if hit.Parent:findFirstChildOfClass"Humanoid" and attack or awer then
-					if hit.Parent~=char then
-						if hit.Parent:findFirstChildOfClass"Humanoid".Health>0 then
-							hit.Parent:findFirstChildOfClass"Humanoid":takeDamage(math.huge)
-							bleed(hit,10)
-							globalSound(5153156097)
-							souls=souls+1
-							warn("killed "..hit.Parent.Name)
-							if not aaa then
-								aaa=true
-							local ogText=TextLabel_3.Text
-							local a={"MURDERER","KILLER","HELL","BURN","DIE","AFTON","THE MAN BEHIND THE SLAUGHTER"}
-							spawn(function()
-								for i=1,20 do
-									swait()
-									TextLabel_3.Text=a[math.random(1,#a)]
-									rs.C1=rsO1*cf(rad(math.random(-20,20)),rad(math.random(-20,20)),rad(math.random(-20,20)))
-									ls.C1=lsO1*cf(rad(math.random(-20,20)),rad(math.random(-20,20)),rad(math.random(-20,20)))
-									rh.C1=rhO1*cf(rad(math.random(-20,20)),rad(math.random(-20,20)),rad(math.random(-20,20)))
-									lh.C1=lhO1*cf(rad(math.random(-20,20)),rad(math.random(-20,20)),rad(math.random(-20,20)))
-									rj.C1=rjO*cf(rad(math.random(-20,20)),rad(math.random(-20,20)),rad(math.random(-20,20)))
-									neck.C1=nec1*cf(rad(math.random(-20,20)),rad(math.random(-20,20)),rad(math.random(-20,20)))								
-									for i,v in pairs(PURP0LE:GetDescendants())do
-										pcall(function()
-											v.Rotation=math.random(-5,5)
-										end)
-									end
-									TextLabel.Position=UDim2.new(0.891454995, math.random(-15,15), 0.880165279, math.random(-15,15))
-									TextLabel_2.Position=UDim2.new(0.5, math.random(-15,15), 0.5, math.random(-15,15))
-									TextLabel_3.Position=UDim2.new(0.467667431, math.random(-15,15), 0.929235518, math.random(-15,15))
-								end
-								rs.C1=rsO1
-								ls.C1=lsO1
-								rh.C1=rhO1
-								lh.C1=lhO1
-								rj.C1=rjO
-								neck.C1=nec1	
-								TextLabel_3.Text=ogText		
-								TextLabel.Position=UDim2.new(0.891454995, 0, 0.880165279, 0)
-								TextLabel_2.Position=UDim2.new(0.5, 0, 0.5, 0)
-								TextLabel_3.Position=UDim2.new(0.467667431, 0, 0.929235518, 0)	
-								for i,v in pairs(PURP0LE:GetDescendants())do
-									pcall(function()
-										v.Rotation=0
-									end)
-									end	
-						aaa=false			
-							end)
-							end
-							ragdoll(hit.Parent)
-						end
-					end
-				end				
-			end
-		end)
-		for i=1,40 do
-			swait()
-			rj.C0=rj.C0:lerp(rjO*CFrame.Angles(0,0,math.rad(25)),.1)
-			rs.C0=rs.C0:lerp(rsO*CFrame.Angles(-math.rad(25),0,math.rad(7)),.1)
-			ls.C0=ls.C0:lerp(lsO*CFrame.Angles(-math.rad(6),0,0),.1)
-			--rh.C0=rh.C0:lerp(rhO*CFrame.Angles(-math.rad(2),0,0),.1)
-			--lh.C0=lh.C0:lerp(lhO*CFrame.Angles(-math.rad(2),0,0),.1)
-			neck.C0=neck.C0:lerp(nec*CFrame.Angles(0,0,-math.rad(25)),.1)
-		end
-		attack=false
-	end
-end
-
-TextButton_2.MouseButton1Down:Connect(function()
-	List_.Visible=not List_.Visible 
-end)
-
-mouse.KeyDown:connect(function(k)
-	if k=="n"then
-		ea.Enabled=not ea.Enabled
-		naeeym2.Enabled=not naeeym2.Enabled
-	end
-	if k=="m" and not death then
-		theme.Playing=not theme.Playing
-	end
-	if k=="p"then
-		springlock()
-	end
-	if k=="z"then
-		throw()
-	end
-	if k=="t" and not wavee and not death then
-		wavee = true
-		local wave=0
-		hum.WalkSpeed=0
-		hum.JumpPower=0
-		local limit=100
-		if equip then
-			torsSound(984785433)
-			limit=225
-		end
-		repeat swait()
-			wave=wave+1
-			if not equip then
-				rh.C0=rh.C0:lerp(rhO*cf(0,-.225,0)*ang(rad(7),0,0),.1)
-				lh.C0=lh.C0:lerp(lhO*ang(-rad(7),0,0),.1)
-				rj.C0=rj.C0:lerp(rjO*CFrame.Angles(0,math.rad(7),0)*cf(0,0,.15),.1)
-				rs.C0=rs.C0:lerp(rsO*cf(0,.5,0)*ang(rad(20)+cos(tick()*7),0,rad(180)),.1)
-				ls.C0=ls.C0:lerp(lsO*ang(-rad(8),0,0),.1)
-				neck.C0=neck.C0:lerp(nec,.1)
-			else
-				rh.C0=rh.C0:lerp(rhO,.1)
-				lh.C0=lh.C0:lerp(lhO,.1)			
-				rj.C0=rj.C0:lerp(rjO,.1)
-				rs.C0=rs.C0:lerp(rsO*cf(1,.7+cos(tick()*10)/4,-.5)*ang(rad(90),0,0),.1)	
-				ls.C0=ls.C0:lerp(lsO*ang(-rad(8),0,0),.1)		
-				neck.C0=neck.C0:lerp(nec*ang(rad(10)+sin(tick()*10)/7,0,0),.1)						
-			end
-		until wave>=limit
-		hum.WalkSpeed=16
-		hum.JumpPower=50
-		wavee = false	
-	end	
-	if k=="f" and state=="idle" and not death and not awer then
-		equip=not equip
-		for i=1,25 do
-			swait()
-			rs.C1=rs.C1:lerp(rsO1*CFrame.new(0,.3,0)*CFrame.Angles(-math.rad(14),0,0),.1)
-		end
-		for i=1,25 do
-			swait()
-			rs.C1=rs.C1:lerp(rsO1,.1)
-		end	
-	end
-end)
-
-hum.Died:connect(function()
-	theme:Stop()
-	local cff=root.CFrame	
-	hum:Destroy()
-	script.Face:clone().Parent=head
-	script.RightLegHolster:clone().Parent=rleg
-	faceW=weld(head,head.Face.Middle)
-	rleghw=weld(rleg,rleg.RightLegHolster.Middle)	
-	for i,v in pairs(char:GetDescendants())do
-		if v:isA"BasePart" and v.Parent.Parent~=script then
-			v.Anchored=false
-		end
-	end
-	char:setPrimaryPartCFrame(cff)	
-	hum=Instance.new("Humanoid",char)
-	hum.MaxHealth=math.huge
-	hum.Health=math.huge
-	rs.Parent=tors
-	ls.Parent=tors
-	rh.Parent=tors
-	lh.Parent=tors
-	neck.Parent=tors
-	rj.Parent=root
-	death=true
-	local HELL=Instance.new("Part",effects)
-	HELL.Name="HELL"
-	HELL.BrickColor=BrickColor.new("Really red")
-	HELL.Material="Neon"
-	HELL.Anchored=true
-	HELL.CanCollide=false
-	local hit,pos= workspace:FindPartOnRayWithIgnoreList(Ray.new(root.Position,Vector3.new(0,-10,0)),{char,HELL})
-	HELL.CFrame=cf(pos)
-	HELL.Size=Vector3.new(0,0,0)
-	spawn(function()
-		while true do swait()
-			HELL.CFrame=HELL.CFrame*ang(0,rad(4),0)
-		end
-	end)
-	for i=1,105 do
-		swait()		
-		state="idle"		
-		HELL.Size=HELL.Size:lerp(Vector3.new(10,0,10),.05)
-	end
-	wait(1)
-	for i=1,300 do
-		swait()
-		state="idle"
-		root.CFrame=root.CFrame*cf(0,-.03,0)
-		rs.C1=rsO1*cf(rad(math.random(-20,20)),rad(math.random(-20,20)),rad(math.random(-20,20)))
-		ls.C1=lsO1*cf(rad(math.random(-20,20)),rad(math.random(-20,20)),rad(math.random(-20,20)))
-		rh.C1=rhO1*cf(rad(math.random(-20,20)),rad(math.random(-20,20)),rad(math.random(-20,20)))
-		lh.C1=lhO1*cf(rad(math.random(-20,20)),rad(math.random(-20,20)),rad(math.random(-20,20)))
-		rj.C1=rjO*cf(rad(math.random(-20,20)),rad(math.random(-20,20)),rad(math.random(-20,20)))
-		neck.C1=nec1*cf(rad(math.random(-20,20)),rad(math.random(-20,20)),rad(math.random(-20,20)))		
-	end
-	wait(2)
-	for i=1,105 do
-		swait()
-		HELL.Size=HELL.Size:lerp(Vector3.new(0,0,0),.05)
-	end	
-	wait(1)
-	plr:loadCharacter""
-end)
-hum.MaxHealth=1000
-hum.Health=1000
-while true do
-	swait()
-	for i,v in pairs(char:GetDescendants())do
-		if v:isA"BasePart"then
-			v.CanCollide=false
-		end
-	end
-	TextLabel_2.Text="Kills: "..souls
-	local sine=tick()
-	local hitfloor,posfloor=workspace:FindPartOnRay(Ray.new(root.CFrame.p,((CFrame.new(root.Position,root.Position - Vector3.new(0,1,0))).lookVector).unit * (4)),char)
-	hum.DisplayDistanceType="None"
-	hum.HealthDisplayType="AlwaysOff"
-	hum.PlatformStand=false
-	hum.Sit=false
-	if death then
-		root.Anchored=true
-		
-	end
-	if equip and not wavee and not awer then
-		knife.Transparency=0
-		pcall(function()
-			rleg.RightLegHolster.Knife.Transparency=1	
-		end)	
-	else
-		knife.Transparency=1
-		pcall(function()
-			rleg.RightLegHolster.Knife.Transparency=0	
-		end)	
-	end
-	if attack and equip and not awer then
-		trail.Enabled=true		
-		knifeWeld.C0=knifeWeld.C0:lerp(knifePosForward,.1)
-	else
-		trail.Enabled=false		
-		knifeWeld.C0=knifeWeld.C0:lerp(knifePosNorm,.1)
-	end
-	local walk=(math.abs(root.Velocity.x) > 1 or math.abs(root.Velocity.z) > 1)
-	state=(hum.PlatformStand and 'paralyzed' or hum.Sit and 'sit' or not hitfloor and root.Velocity.y < -1 and "fall" or not hitfloor and root.Velocity.y > 1 and "jump" or hitfloor and walk and "walk" or hitfloor and "idle")
-	if not springlocked then
-	if state=="jump"and not attack and not wavee then
-		neck.C1=neck.C1:lerp(nec1,.1)		
-		lerp(rs,rsO*cf(0,-.5,.5)*ang(-rad(60),-rad(30),0),.1)
-		lerp(rj,rjO*cf(0,0,0)*ang(-rad(12),0,0),.1)
-		lerp(ls,lsO*cf(0,-.5,.5)*ang(-rad(60),rad(30),0),.1)
-		lerp(neck,nec*cf()*ang(-rad(10),0,0),.1)
-		lerp(rh,rhO*cf()*ang(-rad(8),0,0)+V3.N(0,.3,-.575),.1)
-		lerp(lh,lhO*cf()*ang(-rad(3),0,0),.1)		
-	end
-	if state=="fall"and not attack and not wavee then
-		neck.C1=neck.C1:lerp(nec1,.1)		
-		lerp(rs,rsO*cf(0,-.5+(cos(sine*7)/8),.5)*ang(-rad(120),-rad(10),0),.1)
-		lerp(rj,rjO*cf(0,0,0)*ang(-rad(19),0,0),.1)
-		lerp(ls,lsO*cf(0,-.5+(cos(sine*7)/8),.5)*ang(-rad(120),rad(10),0),.1)
-		lerp(neck,nec*cf()*ang(rad(19),0,0),.1)
-		lerp(rh,rhO*cf()*ang(-rad(8),0,0)+V3.N(0,.5,-.475),.1)
-		lerp(lh,lhO*cf()*ang(-rad(3),0,0),.1)		
-	end		
-	if state=="idle"and not attack and not wavee then
-		neck.C1=neck.C1:lerp(nec1,.1)
-		neck.C0=neck.C0:lerp(nec*CFrame.Angles(math.rad(10)+math.sin(sine*2)/8,0,math.cos(sine*2)/2),.08)
-		ls.C0=ls.C0:lerp(lsO*CFrame.Angles(-math.rad(8)+math.cos(sine*2)/19,0,math.sin(sine*2)/17),.08)
-		rs.C0=rs.C0:lerp(rsO*CFrame.Angles(-math.rad(8)+math.cos(sine*2)/19,0,math.sin(sine*2)/17),.08)	
-		lh.C0=lh.C0:lerp(lhO*CFrame.new(0,.125+math.sin(sine*2)/8,0)*CFrame.Angles(-math.rad(2),math.rad(1),0),.08)	
-		rh.C0=rh.C0:lerp(rhO*CFrame.new(0,.125+math.sin(sine*2)/8,0)*CFrame.Angles(-math.rad(2),-math.rad(1),0),.08)	
-		rj.C0=rj.C0:lerp(rjO*CFrame.new(0,0,-.1-math.sin(sine*2)/8),.08)		
-	end	
-	if state=="walk"then
-		if not attack and not wavee then
-		neck.C0=neck.C0:lerp(nec,.1)
-		neck.C1=neck.C1:Lerp(nec1 * CFrame.new(0,0,0) * CFrame.Angles(math.cos((time()*20))/10,math.rad(0)- rootpart.RotVelocity.Y/35,math.rad(0)),0.15)
-		rj.C0 = rj.C0:lerp(rjO *CFrame.new(0,0,math.sin((time()*20))/4.5) * CFrame.Angles(math.rad(5) + math.cos((time()*20))/10,math.rad(0) + rootpart.RotVelocity.Y/35,-math.sin((time()*10))/7.5),0.15)
-		rs.C0 = rs.C0:lerp(rsO * CFrame.new(0,0,0) * CFrame.Angles(-math.rad(6) - rootpart.RotVelocity.Y/40,math.rad(0),-math.sin((time()*10))/1),0.15)
-		ls.C0 = ls.C0:lerp(lsO * CFrame.new(0,0,0) * CFrame.Angles(-math.rad(6) + rootpart.RotVelocity.Y/40,math.rad(0),-math.sin((time()*10))/1),0.15)
-		end
-		rh.C0 = rh.C0:lerp(rhO * CFrame.new(math.cos((time()*10))/4,math.cos((time()*10))/3,0) * CFrame.Angles(-math.rad(2.4),-math.rad(3),math.rad(-15) + math.sin((time()*10))/1.5),0.15)
-		lh.C0 = lh.C0:lerp(lhO * CFrame.new(math.cos((time()*10))/4,-math.cos((time()*10))/3,0) * CFrame.Angles(-math.rad(2.4),math.rad(3),math.rad(15) + math.sin((time()*10))/1.5),0.15)
-		end
-	elseif furryTime then
-	if state=="jump"and not attack and not wavee then
-		neck.C1=neck.C1:lerp(nec1,.1)		
-		lerp(rs,rsO*cf(0,-.5,.5)*ang(-rad(60),-rad(30),0),.1)
-		lerp(rj,rjO*cf(0,0,0)*ang(-rad(12),0,0),.1)
-		lerp(ls,lsO*cf(0,-.5,.5)*ang(-rad(60),rad(30),0),.1)
-		lerp(neck,nec*cf()*ang(-rad(10),0,0),.1)
-		lerp(rh,rhO*cf()*ang(-rad(8),0,0)+V3.N(0,.3,-.575),.1)
-		lerp(lh,lhO*cf()*ang(-rad(3),0,0),.1)		
-	end
-	if state=="fall"and not attack and not wavee then
-		neck.C1=neck.C1:lerp(nec1,.1)		
-		lerp(rs,rsO*cf(0,-.5+(cos(sine*7)/8),.5)*ang(-rad(120),-rad(10),0),.1)
-		lerp(rj,rjO*cf(0,0,0)*ang(-rad(19),0,0),.1)
-		lerp(ls,lsO*cf(0,-.5+(cos(sine*7)/8),.5)*ang(-rad(120),rad(10),0),.1)
-		lerp(neck,nec*cf()*ang(rad(19),0,0),.1)
-		lerp(rh,rhO*cf()*ang(-rad(8),0,0)+V3.N(0,.5,-.475),.1)
-		lerp(lh,lhO*cf()*ang(-rad(3),0,0),.1)		
-	end		
-	if state=="idle"and not attack and not wavee then
-		neck.C1=neck.C1:lerp(nec1,.1)
-		neck.C0=neck.C0:lerp(nec*CFrame.Angles(math.rad(10)+math.sin(sine*2)/8,rad(10),0)*ang(rad(math.random(-10,10)),rad(math.random(-10,10)),rad(math.random(-10,10))),.08)
-		ls.C0=ls.C0:lerp(lsO*CFrame.Angles(-math.rad(3)+math.cos(sine*2)/19,0,math.sin(sine*2)/17),.08)
-		rs.C0=rs.C0:lerp(rsO*CFrame.Angles(-math.rad(3)+math.cos(sine*2)/19,0,math.sin(sine*2)/17),.08)	
-		lh.C0=lh.C0:lerp(lhO*CFrame.new(0,.125+math.sin(sine*2)/8,0)*CFrame.Angles(-math.rad(2),math.rad(1),0),.08)	
-		rh.C0=rh.C0:lerp(rhO*CFrame.new(0,.125+math.sin(sine*2)/8,0)*CFrame.Angles(-math.rad(2),-math.rad(1),0),.08)	
-		rj.C0=rj.C0:lerp(rjO*CFrame.new(0,0,-.1-math.sin(sine*2)/8),.08)		
-	end	
-	if state=="walk"then
-		if not attack and not wavee then
-		neck.C0=neck.C0:lerp(nec*ang(rad(math.random(-10,10)),rad(math.random(-10,10)),rad(math.random(-10,10))),.1)
-		neck.C1=neck.C1:Lerp(nec1 * CFrame.new(0,0,0) * CFrame.Angles(math.cos((time()*20))/10,math.rad(0)- rootpart.RotVelocity.Y/35,math.rad(0)),0.15)
-		rj.C0 = rj.C0:lerp(rjO *CFrame.new(0,0,math.sin((time()*20))/4.5) * CFrame.Angles(math.rad(5) + math.cos((time()*20))/10,math.rad(0) + rootpart.RotVelocity.Y/35,-math.sin((time()*10))/7.5),0.15)
-		rs.C0 = rs.C0:lerp(rsO * CFrame.new(0,0,0) * CFrame.Angles(-math.rad(6) - rootpart.RotVelocity.Y/40,math.rad(0),rad(80)-math.sin((time()*10))/15),0.15)
-		ls.C0 = ls.C0:lerp(lsO * CFrame.new(0,0,0) * CFrame.Angles(-math.rad(6) + rootpart.RotVelocity.Y/40,math.rad(0),-math.sin((time()*10))/1),0.15)
-		end
-		rh.C0 = rh.C0:lerp(rhO * CFrame.new(math.cos((time()*10))/4,math.cos((time()*10))/3,0) * CFrame.Angles(-math.rad(2.4),-math.rad(3),math.rad(-15) + math.sin((time()*10))/1.5),0.15)
-		lh.C0 = lh.C0:lerp(lhO * CFrame.new(math.cos((time()*10))/4,-math.cos((time()*10))/3,0) * CFrame.Angles(-math.rad(2.4),math.rad(3),math.rad(15) + math.sin((time()*10))/1.5),0.15)
-		end		
-	end
-end
-
+return function() return Scan(root, nil) end
