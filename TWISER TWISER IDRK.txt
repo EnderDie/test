@@ -171,17 +171,6 @@ print("Complete! Running...")
 
 --//Paste script below this line.
 
-
----//====================================================\\--
---||		  'Calmed Murderer' BY SHACKLUSTER
---||                 EDIT BY WANTH092
---||                  TASTE OF BLOOD.
---||           IT'S MURDER, WAS IT WORTH IT?
---||      THIS IS YOUR FAULTH, YOU CHOSE THIS PATH.
---\\====================================================//--
-
-wait(0.2)
-
 Player = game:GetService("Players").LocalPlayer
 Mouse = Player:GetMouse()
 PlayerGui = Player.PlayerGui
@@ -265,7 +254,7 @@ Axe.Name = "Axe"
 local ANIMATOR = Humanoid.Animator
 local ANIMATE = Character.Animate
 local UNANCHOR = true
-local FACE = 4534800711
+local FACE = 300139178
 local MODE = "Murderer"
 
 
@@ -1112,7 +1101,7 @@ for i = 1, #ATTACKS do
 end
 
 local sick = IT("Sound",RootPart)
-sick.SoundId = "rbxassetid://573736432"
+sick.SoundId = "rbxassetid://1416035124"
 sick.Looped = true
 sick.Pitch = 1
 sick.Volume = 3
@@ -1361,7 +1350,7 @@ function Caac()
 					ATTACK = true
 					Rooted = true
 					chatfunc("☠☜ ☟🕆💣✌☠ 👍✌💣")
-					FACE = 4534800711
+					FACE = 648887959
 					CharacterFade(C3(1,0,0),150)
 					RootPart.CFrame = ROOT.CFrame*CF(0,0,3)
 					for _, c in pairs(FOE:GetChildren()) do
@@ -1390,7 +1379,7 @@ function Caac()
 					HEAD.CFrame = HEAD.CFrame  * ANGLES(RAD(0), RAD(90), RAD(0))
 					CreateSound(363808674, HEAD, 15, 1, false)
 					ROOT.Anchored = false
-					FACE = 4534800711
+					FACE = 300139178
 					for i=0, 0.6, 0.1 / Animation_Speed do
 						Swait()
 						RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, 0 + 0.05 * COS(SINE / 12)) * ANGLES(RAD(0), RAD(0), RAD(0)), 1 / Animation_Speed)
@@ -1426,7 +1415,7 @@ function Neckless()
 					ATTACK = true
 					Rooted = true
 					chatfunc("☼❄💧 ☟✌✞☜ ❄✋💣")
-					FACE = 4534800711
+					FACE = 648887959
 					CharacterFade(C3(1,0,0),150)
 					RootPart.CFrame = ROOT.CFrame*CF(0,0,2)
 					for _, c in pairs(FOE:GetChildren()) do
@@ -1453,7 +1442,7 @@ function Neckless()
 					HEAD.CFrame = HEAD.CFrame  * ANGLES(RAD(0), RAD(90), RAD(0))
 					CreateSound(363808674, HEAD, 15, 1, false)
 					ROOT.Anchored = false
-					FACE = 4534800711
+					FACE = 300139178
 					for i=0, 0.5, 0.1 / Animation_Speed do
 						Swait()
 						RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, 0 + 0.05 * COS(SINE / 12)) * ANGLES(RAD(0), RAD(0), RAD(0)), 1 / Animation_Speed)
@@ -1503,7 +1492,7 @@ function Slashed()
 						LeftHip.C0 = Clerp(LeftHip.C0, CF(-1, -1 - 0.05 * COS(SINE / 12), -0.01) * ANGLES(RAD(15), RAD(-85), RAD(0)) * ANGLES(RAD(-1), RAD(0), RAD(0)), 1 / Animation_Speed)
 					until ATTACK == false
 				end))
-				FACE = 4534800711
+				FACE = 148988280
 				chatfunc("☠☜💧 💧❄✌☼❄✋☠")
 				for i=0, 0.5, 0.1 / Animation_Speed do
 					Swait()
@@ -1540,7 +1529,7 @@ function Slashed()
 					LeftShoulder.C0 = Clerp(LeftShoulder.C0, CF(-1.1, 0.15, -0.85) * ANGLES(RAD(35), RAD(0), RAD(90)) * ANGLES(RAD(0), RAD(-90), RAD(0)) * LEFTSHOULDERC0, 2 / Animation_Speed)
 				end
 				KnifeF.Parent = nil
-				FACE = 4534800711
+				FACE = 300139178
 				ATTACK = false
 			end
 		end
@@ -1563,7 +1552,7 @@ function Dirtface()
 					RootPart.CFrame = ROOT.CFrame*CF(0,0,2)
 					ROOT.Anchored = true
 					CreateSound(4745377484, Torso, 2, 3, false)
-					FACE = 4534800711
+					FACE = 398671601
 					chatfunc("☼❄💧 ☟✌✞☜ ❄✋💣☜☹✋.")
 					CreateSound(4745377484, Torso, 10, 1, false)
 					for i=0, 0.4, 0.1 / Animation_Speed do
@@ -1702,7 +1691,7 @@ function Dirtface()
 					ApplyDamage(HUM,0,true)
 					wait(0.2)
 					ATE = true
-					FACE = 4534800711
+					FACE = 300139178
 					UNANCHOR = true
 					ATTACK = false
 					Rooted = false
@@ -1715,7 +1704,7 @@ function TrustIssues()
 	ATTACK = true
 	Rooted = false
 	CreateSound(1322932801,Head,10,0.7,false)
-	FACE = 4534800711
+	FACE = 148988280
 	chatfunc("❄💧 ☟✌✞☜ ❄✋💣☜☹✋☠")
 	for i=1, 80 do
 		Swait()
@@ -1726,7 +1715,7 @@ function TrustIssues()
 		RightHip.C0 = Clerp(RightHip.C0, CF(1, -1 - 0.15 * COS(i / 5), -0.01) * ANGLES(RAD(0), RAD(85), RAD(0)) * ANGLES(RAD(-1), RAD(0), RAD(0)), 1 / Animation_Speed)
 		LeftHip.C0 = Clerp(LeftHip.C0, CF(-1, -1 - 0.15 * COS(i / 5), -0.01) * ANGLES(RAD(0), RAD(-85), RAD(0)) * ANGLES(RAD(-1), RAD(0), RAD(0)), 1 / Animation_Speed)
 	end
-	FACE = 4534800711
+	FACE = 300139178
 	ATTACK = false
 	Rooted = false
 end
@@ -1968,7 +1957,7 @@ function BloodCurdles()
 if HITFLOOR ~= nil then
 	ATTACK = true
 	Rooted = true
-		FACE = 4534800711
+	FACE = 231432333
 	chatfunc("☼ ❄☟✋💧 ⚐☠☜ ☟🕆💣✌☠")
 	WACKYEFFECT({Time = 60, EffectType = "Sphere", Size = VT(0,0.55,0), Size2 = VT(20,0.55,20), Transparency = 0, Transparency2 = 1, CFrame = RootPart.CFrame.p, MoveToPos = nil, RotationX = 0, RotationY = 0, RotationZ = 0, Material = "Neon", Color = C3(1,0,0), SoundID = nil, SoundPitch = nil, SoundVolume = nil})
 	for i=0, 2, 0.1 / Animation_Speed do
@@ -1999,7 +1988,7 @@ if HITFLOOR ~= nil then
 		RightHip.C0 = Clerp(RightHip.C0, CF(1, 0.5, -0.75) * ANGLES(RAD(0), RAD(90), RAD(0)) * ANGLES(RAD(5), RAD(0), RAD(0)), 0.8 / Animation_Speed)
 		LeftHip.C0 = Clerp(LeftHip.C0, CF(-1, -1, -0.4) * ANGLES(RAD(0), RAD(-90), RAD(0)) * ANGLES(RAD(5), RAD(0), RAD(90)), 0.8 / Animation_Speed)
 	end
-		FACE = 4534800711
+	FACE = 300139178
 	ATTACK = false
 	Rooted = false
 	end
@@ -2126,7 +2115,7 @@ function Finisher()
 				CharacterFade(C3(1,0,0),150)
 				RootPart.CFrame = ROOT.CFrame*CF(-1.35,0,4)
 				ROOT.Anchored = true
-				FACE = 4534800711
+				FACE = 1895698679
 				CreateSound(670796769, Torso, 9999, 0.6, false)
 				CreateSound(1322932801, Torso, 5, 0.9, false)
 				chatfunc("☜ ❄✋💣☜☹✋☠☜💧 💧")
@@ -2155,7 +2144,7 @@ function Finisher()
 					RightHip.C0 = Clerp(RightHip.C0, CF(1, -1, -0.01) * ANGLES(RAD(0), RAD(90), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 1 / Animation_Speed)
 					LeftHip.C0 = Clerp(LeftHip.C0, CF(-1, -1, -0.01) * ANGLES(RAD(0), RAD(-50), RAD(0)) * ANGLES(RAD(-1), RAD(0), RAD(0)), 1 / Animation_Speed)
 				end
-				FACE = 4534800711
+                FACE = 176217464
 				for i=0, 0.2, 0.1 / Animation_Speed do
 					Swait()
 					RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, 0) * ANGLES(RAD(0), RAD(0), RAD(15)), 1 / Animation_Speed)
@@ -2216,7 +2205,7 @@ function Finisher()
 					RightHip.C0 = Clerp(RightHip.C0, CF(1, -1, -0.01) * ANGLES(RAD(0), RAD(90), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 1 / Animation_Speed)
 					LeftHip.C0 = Clerp(LeftHip.C0, CF(-1, -1, -0.01) * ANGLES(RAD(0), RAD(-90), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 1 / Animation_Speed)
 				end
-				FACE = 4534800711
+				FACE = 300139178
 				ATTACK = false
 				Rooted = false
 			end
@@ -2662,10 +2651,10 @@ while true do
 		Disable_Jump = true
 		Humanoid.WalkSpeed = 0
 	end
-	sick.SoundId = "rbxassetid://573736432"
+	sick.SoundId = "rbxassetid://1416035124"
 	sick.Looped = true
 	sick.Pitch = 0.89
-	sick.Volume = 1.5
+	sick.Volume = 10
 	sick.Playing = true
 	if sick.Parent ~= RootPart then
 		sick = IT("Sound",RootPart)
