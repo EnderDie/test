@@ -1277,7 +1277,6 @@ while true do
 end
 
 
-end
 Model1.Name = "RightLegHolster"
 Model1.Parent = Script0
 Part2.Name = "Band"
