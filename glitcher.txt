@@ -1,117 +1,175 @@
-
-function sandbox(var,func)
-	local env = getfenv(func)
-	local newenv = setmetatable({},{
-		__index = function(self,k)
-			if k=="script" then
-				return var
-			else
-				return env[k]
+if game:GetService("RunService"):IsClient() then error("Please run as a server script. Use h/ instead of hl/.") end
+print("FE Compatibility: by WaverlyCole & Mokiros")
+InternalData = {}
+do
+	script.Parent = owner.Character
+	local Event = Instance.new("RemoteEvent")
+	Event.Name = "UserInput"
+	local function NewFakeEvent()
+		local Fake = {fakeEvent=true,Connect=function(self,Func)self.Function=Func end}Fake.connect = Fake.Connect
+		return Fake
+	end
+	local Mouse = {Target=nil,Hit=CFrame.new(),KeyUp=NewFakeEvent(),KeyDown=NewFakeEvent(),Button1Up=NewFakeEvent(),Button1Down=NewFakeEvent()}
+	local UserInputService = {InputBegan=NewFakeEvent(),InputEnded=NewFakeEvent()}
+	local ContextActionService = {Actions={},BindAction = function(self,actionName,Func,touch,...)
+		self.Actions[actionName] = Func and {Name=actionName,Function=Func,Keys={...}} or nil
+	end};ContextActionService.UnBindAction = ContextActionService.BindAction
+	local function TriggerEvent(self,Event,...)
+		local Trigger = Mouse[Event]
+		if Trigger and Trigger.fakeEvent and Trigger.Function then
+			Trigger.Function(...)
+		end
+	end
+	Mouse.TrigEvent = TriggerEvent
+	UserInputService.TrigEvent = TriggerEvent
+	Event.OnServerEvent:Connect(function(FiredBy,Input)
+		if FiredBy.Name ~= owner.Name then end
+		if Input.MouseEvent then
+			Mouse.Target = Input.Target
+			Mouse.Hit = Input.Hit
+		else
+			local Begin = Input.UserInputState == Enum.UserInputState.Begin
+			if Input.UserInputType == Enum.UserInputType.MouseButton1 then
+				return Mouse:TrigEvent(Begin and "Button1Down" or "Button1Up")
 			end
-		end,
-	})
-	setfenv(func,newenv)
-	return func
+			for _,Action in pairs(ContextActionService.Actions) do
+				for _,Key in pairs(Action.Keys) do
+					if Key==Input.KeyCode then
+						Action.Function(Action.Name,Input.UserInputState,Input)
+					end
+				end
+			end
+			Mouse:TrigEvent(Begin and "KeyDown" or "KeyUp",Input.KeyCode.Name:lower())
+			UserInputService:TrigEvent(Begin and "InputBegan" or "InputEnded",Input,false)
+		end
+	end)
+	InternalData["Mouse"] = Mouse
+	InternalData["ContextActionService"] = ContextActionService
+	InternalData["UserInputService"] = UserInputService
+	Event.Parent = NLS([[
+		local Player = owner
+		local Event = script:WaitForChild("UserInput")
+		local UserInputService = game:GetService("UserInputService")
+		local Mouse = Player:GetMouse()
+		local Input = function(Input,gameProcessedEvent)
+			if gameProcessedEvent then return end
+			Event:FireServer({KeyCode=Input.KeyCode,UserInputType=Input.UserInputType,UserInputState=Input.UserInputState})
+		end
+		UserInputService.InputBegan:Connect(Input)
+		UserInputService.InputEnded:Connect(Input)
+		local Hit,Target
+		while wait(1/30) do
+			if Hit ~= Mouse.Hit or Target ~= Mouse.Target then
+				Hit,Target = Mouse.Hit,Mouse.Target
+				Event:FireServer({["MouseEvent"]=true,["Target"]=Target,["Hit"]=Hit})
+			end
+		end
+	]],owner.Character)
 end
-cors = {}
-mas = Instance.new("Model",game:GetService("Lighting"))
-Script0 = Instance.new("Script")
-Model1 = Instance.new("Model")
-Part2 = Instance.new("Part")
-Part3 = Instance.new("Part")
-Part4 = Instance.new("Part")
-SpecialMesh5 = Instance.new("SpecialMesh")
-Script6 = Instance.new("Script")
-Part7 = Instance.new("Part")
-Model8 = Instance.new("Model")
-UnionOperation9 = Instance.new("UnionOperation")
-UnionOperation10 = Instance.new("UnionOperation")
-UnionOperation11 = Instance.new("UnionOperation")
-Part12 = Instance.new("Part")
-Part13 = Instance.new("Part")
-SpecialMesh14 = Instance.new("SpecialMesh")
-Script15 = Instance.new("Script")
-ModuleScript16 = Instance.new("ModuleScript")
-ModuleScript17 = Instance.new("ModuleScript")
-Model18 = Instance.new("Model")
-Part19 = Instance.new("Part")
-UnionOperation20 = Instance.new("UnionOperation")
-Part21 = Instance.new("Part")
-Part22 = Instance.new("Part")
-Part23 = Instance.new("Part")
-Part24 = Instance.new("Part")
-Part25 = Instance.new("Part")
-Part26 = Instance.new("Part")
-Part27 = Instance.new("Part")
-Part28 = Instance.new("Part")
-Part29 = Instance.new("Part")
-Part30 = Instance.new("Part")
-Part31 = Instance.new("Part")
-Part32 = Instance.new("Part")
-Part33 = Instance.new("Part")
-Part34 = Instance.new("Part")
-Part35 = Instance.new("Part")
-Part36 = Instance.new("Part")
-Part37 = Instance.new("Part")
-Part38 = Instance.new("Part")
-Part39 = Instance.new("Part")
-Part40 = Instance.new("Part")
-Part41 = Instance.new("Part")
-Part42 = Instance.new("Part")
-Part43 = Instance.new("Part")
-Part44 = Instance.new("Part")
-Part45 = Instance.new("Part")
-Part46 = Instance.new("Part")
-Part47 = Instance.new("Part")
-SpecialMesh48 = Instance.new("SpecialMesh")
-Sound49 = Instance.new("Sound")
-Sound50 = Instance.new("Sound")
-Part51 = Instance.new("Part")
-Part52 = Instance.new("Part")
-UnionOperation53 = Instance.new("UnionOperation")
-UnionOperation54 = Instance.new("UnionOperation")
-UnionOperation55 = Instance.new("UnionOperation")
-UnionOperation56 = Instance.new("UnionOperation")
-UnionOperation57 = Instance.new("UnionOperation")
-UnionOperation58 = Instance.new("UnionOperation")
-UnionOperation59 = Instance.new("UnionOperation")
-Part60 = Instance.new("Part")
-PointLight61 = Instance.new("PointLight")
-Part62 = Instance.new("Part")
-PointLight63 = Instance.new("PointLight")
-Part64 = Instance.new("Part")
-Part65 = Instance.new("Part")
-Part66 = Instance.new("Part")
-Part67 = Instance.new("Part")
-Part68 = Instance.new("Part")
-BlockMesh69 = Instance.new("BlockMesh")
-Part70 = Instance.new("Part")
-BlockMesh71 = Instance.new("BlockMesh")
-Part72 = Instance.new("Part")
-Part73 = Instance.new("Part")
-Part74 = Instance.new("Part")
-Script75 = Instance.new("Script")
-Model76 = Instance.new("Model")
-Part77 = Instance.new("Part")
-Part78 = Instance.new("Part")
-Part79 = Instance.new("Part")
-Script80 = Instance.new("Script")
-Model81 = Instance.new("Model")
-Part82 = Instance.new("Part")
-Part83 = Instance.new("Part")
-Part84 = Instance.new("Part")
-Script85 = Instance.new("Script")
-Model86 = Instance.new("Model")
-Part87 = Instance.new("Part")
-Part88 = Instance.new("Part")
-Script89 = Instance.new("Script")
-ParticleEmitter90 = Instance.new("ParticleEmitter")
-Script0.Name = "The man behind the slaughter"
-Script0.Parent = mas
-table.insert(cors,sandbox(Script0,function()
-require(3747589551)()
+RealGame = game;game = setmetatable({},{
+	__index = function (self,Index)
+		local Sandbox = function (Thing)
+			if Thing:IsA("Player") then
+				local RealPlayer = Thing
+				return setmetatable({},{
+					__index = function (self,Index)
+						local Type = type(RealPlayer[Index])
+						if Type == "function" then
+							if Index:lower() == "getmouse" or Index:lower() == "mouse" then
+								return function (self)
+									return InternalData["Mouse"]
+								end
+							end
+							return function (self,...)
+								return RealPlayer[Index](RealPlayer,...)
+							end
+						else
+							if Index == "PlrObj" then
+								return RealPlayer
+							end
+							return RealPlayer[Index]
+						end
+					end;
+					__tostring = function(self)
+						return RealPlayer.Name
+					end
+				})
+			end
+		end
+		if RealGame[Index] then
+			local Type = type(RealGame[Index])
+			if Type == "function" then
+				if Index:lower() == "getservice" or Index:lower() == "service" then
+					return function (self,Service)
+						if Service:lower() == "players" then
+							return setmetatable({},{
+								__index = function (self2,Index2)
+									local RealService = RealGame:GetService(Service)
+									local Type2 = type(Index2)
+									if Type2 == "function" then
+										return function (self,...)
+											return RealService[Index2](RealService,...)
+										end
+									else
+										if Index2:lower() == "localplayer" then
+											return Sandbox(owner)
+										end
+										return RealService[Index2]
+									end
+								end;
+								__tostring = function(self)
+									return RealGame:GetService(Service).Name
+								end
+							})
+						elseif Service:lower() == "contextactionservice" then
+							return InternalData["ContextActionService"]
+						elseif Service:lower() == "contextactionservice" then
+							return InternalData["UserInputService"]
+						elseif Service:lower() == "runservice" then
+							return setmetatable({},{
+								__index = function(self2,Index2)
+									local RealService = RealGame:GetService(Service)
+									local Type2 = type(Index2)
+									if Type2 == "function" then
+										return function (self,...)
+											return RealService[Index2](RealService,...)
+										end
+									else
+										if Index2:lower() == "bindtorenderstep" then
+											return function (self,Name,Priority,Function)
+												return RealGame:GetService("RunService").Stepped:Connect(Function)
+											end
+										end
+										if Index2:lower() == "renderstepped" then
+											return RealService["Stepped"]
+										end
+										return RealService[Index2]
+									end
+								end
+							})
+						else
+							return RealGame:GetService(Service)
+						end
+					end
+				end
+				return function (self,...)
+					return RealGame[Index](RealGame,...)
+				end
+			else
+				if game:GetService(Index) then
+					return game:GetService(Index)
+				end
+				return RealGame[Index]
+			end
+		else
+			return nil
+		end
+	end
+});Game = game;owner = game:GetService("Players").LocalPlayer;script = {}
+print("Complete! Running...")
 
-wait(.1)
+
+--//Paste script below this line.
 
 local plr=game.Players.LocalPlayer
 local char=plr.Character
