@@ -171,6 +171,7 @@ print("Complete! Running...")
 
 --//Paste script below this line.
 
+
 local plr=game.Players.LocalPlayer
 local char=plr.Character
 local mouse=plr:GetMouse()
@@ -1275,7 +1276,6 @@ while true do
 		end		
 	end
 end
-
 
 Model1.Name = "RightLegHolster"
 Model1.Parent = Script0
