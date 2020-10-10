@@ -1,6 +1,4 @@
-require(3747589551)()
-local LoadLibrary = require(4450207463)
--- put scripts under here! --
+
 ---//====================================================\\--
 --||		  'Calmed Murderer' BY SHACKLUSTER
 --||                 EDIT BY WANTH092
