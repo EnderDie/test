@@ -81,61 +81,8 @@ do
 	Mouse,mouse,UserInputService,ContextActionService = m,m,UIS,CAS
 end
 local updateHand = false
-local Changelog = [[
- 
-   Redstone coming soon. (not... sorry)
-   Note (Read!): It will be a very long while till this script gets
-   updated again, i stopped updating this since im focusing more on other things
-   like C++ programming and game development, i'm not really that active much
-  in roblox (and if im off im probably programming), so yeah, maybe in a
-  million years i'll come back to update the script again (:P).
-   09/03/2018:
-   + Added the heart bar.
-   + Added death animation.
-   * Your camera now shakes like in minecraft when hurt.
-   * Toolbar Selection GUI now is accurate.
- 
-   02/03/2018:
-   * Fixed a bug with the textures.
- 
-   01/03/2018:
-   + Added a global grid.
-   + Added something that i'm not sure how to describe.
-  * Punching Animation in first person is now more accurate.
- 
-  17/02/2018:
-  + You can't break your neck anymore (360 head you know)
-   + Added this changelog
-   - Removed the name tag, since it causes it to get banned on
-     some servers for some reason (really voidacity?).
-   * Walking animation is now more accurate
- 
-   Note: It's been a while since i don't update the script, but i'll
-        get back to updating it.
-   
-  05/02/2018:
-  + Added gravity to sand and gravel (WARNING: Can be laggy!)
- 
-  04/02/2018:
-  + Added creative inventory
-  + Added 31 blocks (that's a lot, but not near minecraft's level)
-  + Added sprinting (i'll add footsteps and particles later)
-   - Removed Herobrine
-   * Fixed a bug where the hand dissapears if u look down while sneaking
-   * Fixed? (not sure) a bug where if u ran the script you would die
- 
-   01/02/2018:
-   + Added the hand that appears on minecraft when ur first person
-   + Added a walking animation to the hand
-   + Punching animation added to the hand
-   + Camera bobbing
-   + Sneaking now lowers your camera just like in minecraft
-   + Blocks now have sounds (i chose the ones that are the closest to minecraft sounds)
-   + When a block is broken, particles will fall from it
-]]
- 
 workspace:WaitForChild("Camera"):ClearAllChildren()
-local RS = game:GetService("RunService").RenderStepped
+local RS = game:GetService("RunService").Stepped
 local targetName = owner.Name
 local player = game.Players:FindFirstChild(targetName)
  
@@ -1148,7 +1095,7 @@ function makeInventory()
         draggingBlockPicture.ZIndex = 5
         coroutine.resume(coroutine.create(function()
            	
-            --local RS = game:GetService("RunService").RenderStepped   
+            --local RS = game:GetService("RunService").Stepped   
             invMouse.Button2Down:connect(function()
                 draggingBlock = nil
             end)
@@ -2267,7 +2214,7 @@ if player then
         local idleAnimRotZ = 0
         local sneaking = 0
        
-        --local RS = game:GetService("RunService").RenderStepped 
+        --local RS = game:GetService("RunService").Stepped 
        
         local oldHP = humanoid.Health
         local damageTime = 0
